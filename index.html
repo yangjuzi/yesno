@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>yes no button</title>
+    <meta name="description" content="yes or no helps you decide">
+    <link rel="canonical" href="https://yesno.pro/" />
+     
+    <style>
+      
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #result {
+            margin: 20px;
+            padding: 20px 40px;
+            font-size: 100px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        #yesNoButton {
+            padding: 10px 20px;
+            font-size: 50px;
+            cursor: pointer;
+            margin-bottom: 20px; /* 按钮和结果之间的间距 */
+            border-radius: 15px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #F44336;
+            color: white;
+        }
+        .yes.no {
+          color: currentColor;
+          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div id="result" class="yes no">YES or NO</div>
+<button id="yesNoButton">Click Me!</button>
+
+<script>
+    var countdownTimer;
+    var countdown = 3;
+
+    function showResult(result) {
+        clearInterval(countdownTimer);
+        document.getElementById('result').className = '';
+        document.getElementById('result').textContent = result;
+        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
+    }
+
+    function countdownEffect() {
+        var timerCount = countdown;
+        countdownTimer = setInterval(function() {
+            document.getElementById('result').textContent = 'YES or NO... ' + timerCount + 's';
+            timerCount--;
+            if (timerCount < 0) {
+                clearInterval(countdownTimer);
+            }
+        }, 1000);
+
+        // 显示最终结果
+        setTimeout(function() {
+          var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
+          showResult(randomResult);
+        }, countdown * 1000);
+    }
+
+    document.getElementById('yesNoButton').addEventListener('click', function() {
+        document.getElementById('result').textContent = 'YES or NO... ' + countdown + 's';
+        countdownEffect();
+    });
+</script>
+
+</body>
+</html>

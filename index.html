@@ -8,13 +8,38 @@
     <link rel="canonical" href="https://yesno.pro/" />
      
     <style>
-      
+      nav {
+            display: flex;
+            justify-content: center; /* 横向居中 */
+            background-color: #f1f1f1; /* 可自定义背景色 */
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            gap: 1rem; /* 项目之间的间距 */
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: #333; /* 文字颜色 */
+            font-size: 18px;
+            padding: 0.5rem 1rem;
+        }
+
+        nav li a:hover {
+            background-color: #ddd; /* 鼠标悬停时的背景色 */
+        }
+    
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            
             margin: 0;
         }
         #result {
@@ -52,7 +77,16 @@
     </style>
 </head>
 <body>
-
+<!-- 导航栏 -->
+<nav>
+    <ul>
+        <li><a href="./index.html">Yes No Button</a></li>
+        <li><a href="#">Yes No Wheel</a></li>
+        <li><a href="#">Yes No Oracle</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
 <div id="result" class="yes no">YES or NO</div>
 <button id="yesNoButton">Click Me!</button>
 

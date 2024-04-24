@@ -8,39 +8,16 @@
     <link rel="canonical" href="https://yesno.pro/" />
      
     <style>
-      nav {
-            display: flex;
-            justify-content: center; /* 横向居中 */
-            background-color: #f1f1f1; /* 可自定义背景色 */
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            gap: 1rem; /* 项目之间的间距 */
-        }
-
-        nav li a {
-            text-decoration: none;
-            color: #333; /* 文字颜色 */
-            font-size: 18px;
-            padding: 0.5rem 1rem;
-        }
-
-        nav li a:hover {
-            background-color: #ddd; /* 鼠标悬停时的背景色 */
-        }
+      
     
-        body {
+        #body-main {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-            margin: 0;
+            background-color:#020d24;
+            margin: 0px;
+			min-height:100vh;
         }
         #result {
             margin: 20px;
@@ -56,6 +33,7 @@
             padding: 10px 20px;
             font-size: 50px;
             cursor: pointer;
+			background-color:#5340ff;
             margin-bottom: 20px; /* 按钮和结果之间的间距 */
             border-radius: 15px;
         }
@@ -75,19 +53,45 @@
           -webkit-text-fill-color: transparent;
         }
     </style>
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
 </head>
 <body>
-<!-- 导航栏 -->
-<nav>
-    <ul>
-        <li><a href="./index.html">Yes No Button</a></li>
-        <li><a href="#">Yes No Wheel</a></li>
-        <li><a href="#">Yes No Oracle</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-<div id="result" class="yes no">YES or NO</div>
+	
+  <!-- Navbar Dropdown 2 rows -->
+  <section>
+    <div class="h-auto w-screen bg-[#020d24] py-2 text-white [border-bottom:1px_solid_rgb(91,_103,_130)]">
+      <!-- NAVBAR -->
+      <nav class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0" x-data="{isOpen: false, menuOne:false}">
+        <!-- CONTAINER -->
+        <div class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
+          <!-- LOGO - YOU CAN REPLACE THIS -->
+          <a href="#">
+            <img src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f03f3e434e2326e8af190_%5BA%5D--Navbar%20Brand%20(1).png" alt="" class="inline-block max-h-6 max-w-full" />
+          </a>
+          <!-- MENU CONTENT 2 -->
+          <div class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0" x-bind:class="isOpen ? 'show' : 'hidden'">
+            <a href="https://yesno.pro/index.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Oracle</a>
+            <a href="https://yesno.pro/index.htmlpricing" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Button</a>
+            <a href="https://yesno.pro/index.htmlblog" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Wheel</a>
+            <a href="https://build.flowspark.co/template" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Tarot</a>
+			<a href="https://build.flowspark.co/template" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Astrology</a>
+            <a href="https://flowspark.co/designs" class="2 ml-5 rounded-full bg-[#081631] px-6 py-4 text-center font-semibold text-white transition hover:bg-[#2d6ae0] md:ml-10 lg:ml-4" style="background-color:#5340ff;">Blog</a>
+          </div>
+          <!-- BURGER MENU -->
+          <a href="#" class="absolute right-5 lg:hidden" x-on:click.prevent="isOpen = !isOpen">
+            <svg width="1.25rem" height="1rem" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7Z" fill="currentColor"></path>
+              <path d="M19 0H7C6.44772 0 6 0.447715 6 1C6 1.55228 6.44772 2 7 2H19C19.5523 2 20 1.55228 20 1C20 0.447715 19.5523 0 19 0Z" fill="currentColor"></path>
+              <path d="M19 14H11C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16H19C19.5523 16 20 15.5523 20 15C20 14.4477 19.5523 14 19 14Z" fill="currentColor"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <div id="body-main" class="mainbutton">
+  <div id="result" class="yes no">YES or NO</div>
 <button id="yesNoButton">Click Me!</button>
 
 <script>
@@ -124,5 +128,22 @@
     });
 </script>
 
+</div>
+
+<footer class="bg-[#020d24] text-white">
+  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
+    <div class="flex flex-col items-center">
+      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
+      </div>
+      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
+      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

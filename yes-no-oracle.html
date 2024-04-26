@@ -3,24 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no button</title>
-    <meta name="description" content="yes or no helps you decide">
+    <title>yes no oracle</title>
+    <meta name="description" content=" Yes No Oracle is here to provide you with clear and concise answers to life's pressing questions">
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/" />
      
     <style>
-      
-    
-        #body-main {
-            display: flex;
+     
+      #oracle {
+        display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color:#020d24;
             margin: 0px;
 			min-height:100vh;
+      }
+     
+    #oracle textarea {
+     
+  /* ... */
+  /* Add desired max-width or use flexbox to fill available space */
+  max-width: none;
+  width: 60%;
+  /* ... */
+
+       min-width: 500px; /* Adjust as needed */
+       /* ... */
+        /* 添加边框 */
+        border: 2px solid #007BFF; /* 可以根据需要更改边框颜色 */
+        
+        /* 调整填充 */
+        padding: 10px;
+
+        /* 使用阴影 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        /* 更改背景色 */
+        background-color: #F8FAFC; /* 可以根据需要更改背景色 */
+
+        /* 添加焦点效果 */
+        outline: none; /* 移除浏览器默认焦点样式 */
+        
+        transition: all 0.2s ease-in-out; /* 添加过渡效果，使样式变化更平滑 */
+    }
+
+    #oracle textarea:focus {
+        /* 焦点状态下改变边框和阴影 */
+        border-color: #0056b3;
+        box-shadow: 0 ¼em 0.½em rgba(0, 123, 255, 0..png), 0 0 0 0.2em rgba(0, 123, 255, 0.2);
+    }
+
+
+
+      #question {
+          margin-bottom: 10px;
+      }
+      #ask {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+			background-color:#5340ff;
+            margin-bottom: 20px; /* 按钮和结果之间的间距 */
+            border-radius: 15px;
+            
+            text-align: center;
+            width: max-content;
+            margin: 0 auto;
         }
-        #result {
+      #result {
             margin: 20px;
             padding: 20px 40px;
             font-size: 100px;
@@ -30,30 +81,7 @@
             display: inline-block;
             transition: background-color 0.3s ease;
         }
-        #yesNoButton {
-            padding: 10px 20px;
-            font-size: 50px;
-            cursor: pointer;
-			background-color:#5340ff;
-            margin-bottom: 20px; /* 按钮和结果之间的间距 */
-            border-radius: 15px;
-        }
-        .yes {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .no {
-            background-color: #F44336;
-            color: white;
-        }
-        .yes.no {
-          color: currentColor;
-          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-    </style>
+  </style>
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
 </head>
@@ -86,45 +114,39 @@
       </nav>
     </div>
   </section>
-  <div id="body-main" class="mainbutton">
-  <div id="result" class="yes no">YES or NO</div>
-<button id="yesNoButton">Click Me!</button>
-
-<script>
-    var countdownTimer;
-    var countdown = 3;
-
-    function showResult(result) {
-        clearInterval(countdownTimer);
-        document.getElementById('result').className = '';
-        document.getElementById('result').textContent = result;
-        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
-    }
-
-    function countdownEffect() {
-        var timerCount = countdown;
-        countdownTimer = setInterval(function() {
-            document.getElementById('result').textContent = 'YES or NO... ' + timerCount + 's';
-            timerCount--;
-            if (timerCount < 0) {
-                clearInterval(countdownTimer);
-            }
-        }, 1000);
-
-        // 显示最终结果
-        setTimeout(function() {
-          var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
-          showResult(randomResult);
-        }, countdown * 1000);
-    }
-
-    document.getElementById('yesNoButton').addEventListener('click', function() {
-        document.getElementById('result').textContent = 'YES or NO... ' + countdown + 's';
-        countdownEffect();
-    });
-</script>
-
+  
+  <div id="oracle" style="display: flex; flex-direction: column;">
+    <h1>Yes/No Oracle</h1>
+    <div>
+        <textarea id="question" placeholder="Please input your question" ></textarea>
+    </div>
+    
+      <button id="ask" onclick="askQuestion()">oracle</button>
+    
+    <div id="result"></div>
 </div>
+<script>
+    function askQuestion() {
+        var question = document.getElementById('question').value;
+        var result = getAnswer(question);
+        // Set the background color based on the answer
+        var resultColor = result === "Yes" ? "#4CAF50" : "#F44336"; // Green for "Yes", red for "No"
+
+// Display the question and answer together
+
+var formattedResult = `"${question}" \n\n ${result}`;
+
+document.getElementById('result').textContent = formattedResult;
+document.getElementById('result').style.backgroundColor = resultColor;
+}
+
+
+    function getAnswer(question) {
+        var answers = ["Yes", "No"];
+        var randomIndex = Math.floor(Math.random() * answers.length);
+        return answers[randomIndex];
+    }
+</script>
 
 <footer class="bg-[#020d24] text-white">
   <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">

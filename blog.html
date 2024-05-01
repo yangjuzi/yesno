@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>yes no button</title>
+    <meta name="description" content="yes or no helps you decide">
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link rel="canonical" href="https://yesno.pro/" />
+     
+    <style>
+      
+    
+        #body-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color:#020d24;
+            margin: 0px;
+			min-height:100vh;
+        }
+        #result {
+            margin: 20px;
+            padding: 20px 40px;
+            font-size: 100px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        #yesNoButton {
+            padding: 10px 20px;
+            font-size: 50px;
+            cursor: pointer;
+			background-color:#5340ff;
+            margin-bottom: 20px; /* 按钮和结果之间的间距 */
+            border-radius: 15px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #F44336;
+            color: white;
+        }
+        .yes.no {
+          color: currentColor;
+          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+    </style>
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
+</head>
+<body>
+	
+  <!-- Navbar Dropdown 2 rows -->
+  <section>
+    <div class="h-auto w-screen bg-[#020d24] py-2 text-white [border-bottom:1px_solid_rgb(91,_103,_130)]">
+      <!-- NAVBAR -->
+      <nav class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0" x-data="{isOpen: false, menuOne:false}">
+        <!-- CONTAINER -->
+        <div class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
+          <!-- LOGO - YOU CAN REPLACE THIS -->
+          <a href="#">
+            <img src="favicon.svg" alt="random logo" class="w-32 h-32 object-contain" />
+            
+            
+          </a>
+          <!-- MENU CONTENT 2 -->
+          <div class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0" x-bind:class="isOpen ? 'show' : 'hidden'">
+            <a href="https://yesno.pro/index.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Oracle</a>
+            <a href="https://yesno.pro/index.htmlpricing" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Button</a>
+            <a href="https://yesno.pro/index.htmlblog" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Wheel</a>
+            <a href="https://build.flowspark.co/template" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Tarot</a>
+			<a href="https://build.flowspark.co/template" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Astrology</a>
+            <a href="https://flowspark.co/designs" class="2 ml-5 rounded-full bg-[#081631] px-6 py-4 text-center font-semibold text-white transition hover:bg-[#2d6ae0] md:ml-10 lg:ml-4" style="background-color:#5340ff;">Blog</a>
+          </div>
+          
+        </div>
+      </nav>
+    </div>
+  </section>
+  <div id="body-main" class="mainbutton">
+  <div id="result" class="yes no">YES or NO</div>
+<button id="yesNoButton">Click Me!</button>
+
+<script>
+    var countdownTimer;
+    var countdown = 3;
+
+    function showResult(result) {
+        clearInterval(countdownTimer);
+        document.getElementById('result').className = '';
+        document.getElementById('result').textContent = result;
+        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
+    }
+
+    function countdownEffect() {
+        var timerCount = countdown;
+        countdownTimer = setInterval(function() {
+            document.getElementById('result').textContent = 'YES or NO... ' + timerCount + 's';
+            timerCount--;
+            if (timerCount < 0) {
+                clearInterval(countdownTimer);
+            }
+        }, 1000);
+
+        // 显示最终结果
+        setTimeout(function() {
+          var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
+          showResult(randomResult);
+        }, countdown * 1000);
+    }
+
+    document.getElementById('yesNoButton').addEventListener('click', function() {
+        document.getElementById('result').textContent = 'YES or NO... ' + countdown + 's';
+        countdownEffect();
+    });
+</script>
+
+</div>
+
+<footer class="bg-[#020d24] text-white">
+  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
+    <div class="flex flex-col items-center">
+      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
+        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
+      </div>
+      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
+      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div style="display: none;">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-NZY24GZMKZ');
+  </script>
+  </div>
+</body>
+</html>

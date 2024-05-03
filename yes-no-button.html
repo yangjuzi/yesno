@@ -3,86 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no</title>
-    <meta name="description" content="yes or no help you decide,free,simple,random">
+    <title>yes no button</title>
+    <meta name="description" content="yes or no helps you decide">
     <link rel="shortcut icon" href="./favicon.svg" />
-    <link rel="canonical" href="https://yesno.pro/" />
-    
+    <link rel="canonical" href="https://yesno.pro/yes-no-button.html" />
      
     <style>
-     
-      #oracle {
-        display: flex;
+      
+    
+        #body-main {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color:#020d24;
             margin: 0px;
-			min-height:100vh;
-      }
-     
-    #oracle textarea {
-     
-  /* ... */
-  /* Add desired max-width or use flexbox to fill available space */
-  max-width: none;
-  width: 60%;
-  /* ... */
-
-       min-width: 500px; /* Adjust as needed */
-       /* ... */
-        /* 添加边框 */
-        border: 2px solid #007BFF; /* 可以根据需要更改边框颜色 */
-        
-        /* 调整填充 */
-        padding: 10px;
-
-        /* 使用阴影 */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-        /* 更改背景色 */
-        background-color: #F8FAFC; /* 可以根据需要更改背景色 */
-
-        /* 添加焦点效果 */
-        outline: none; /* 移除浏览器默认焦点样式 */
-        
-        transition: all 0.2s ease-in-out; /* 添加过渡效果，使样式变化更平滑 */
-    }
-
-    #oracle textarea:focus {
-        /* 焦点状态下改变边框和阴影 */
-        border-color: #0056b3;
-        box-shadow: 0 ¼em 0.½em rgba(0, 123, 255, 0..png), 0 0 0 0.2em rgba(0, 123, 255, 0.2);
-    }
-
-
-
-      #question {
-          margin-bottom: 10px;
-      }
-      #ask {
+			min-height:80vh;
+        }
+        #result {
+    margin: 20px;
+    /* 设置宽度和高度一致，形成圆形 */
+    width: 400px;
+    height: 400px;
+    line-height: 400px; /* 保证文本垂直居中 */
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%; /* 创建圆形 */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border: 3px solid white; /* 可选：增加边框使圆形更加明显 */
+}
+        #yesNoButton {
             padding: 10px 20px;
-            font-size: 20px;
+            font-size: 50px;
             cursor: pointer;
-			background-color:#5340ff;
+			background-color:#7e70f4;
             margin-bottom: 20px; /* 按钮和结果之间的间距 */
             border-radius: 15px;
-            
-            text-align: center;
-            width: max-content;
-            margin: 0 auto;
+			
+    color: white; /* 文字白色 */
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    
+    
         }
-      #result {
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 100px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 50px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+
+		/* 按下后的按钮样式 */
+#yesNoButton:active {
+    background-color: #1f0edb; /* 更深的绿色，按下时改变 */
+    box-shadow: 0 5px #666; /* 添加阴影效果 */
+    transform: translateY(4px); /* 让按钮有“按下去”的感觉 */
+}
+        .yes {
+            background-color: #4CAF50;
+            color: white;
         }
-  </style>
+        .no {
+            background-color: #F44336;
+            color: white;
+        }
+        .yes.no {
+          color: currentColor;
+          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+    </style>
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
 </head>
@@ -104,7 +95,7 @@
           <!-- MENU CONTENT 2 -->
           <div class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0" x-bind:class="isOpen ? 'show' : 'hidden'">
             <a href="https://yesno.pro/yes-no-oracle.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Oracle</a>
-           
+            
             <a href="https://yesno.pro/yes-no-wheel.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Wheel</a>
             <a href="https://yesno.pro/yes-no-tarot.html" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Tarot</a>
             <a href="https://yesno.pro/yes-no-button.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Button</a>
@@ -116,39 +107,29 @@
       </nav>
     </div>
   </section>
-  
-  <div id="oracle" style="display: flex; flex-direction: column;">
-    <h1>Yes/No Oracle</h1>
-    <div>
-        <textarea id="question" placeholder="Please input your question" ></textarea>
-    </div>
-    
-      <button id="ask" onclick="askQuestion()">oracle</button>
-    
-    <div id="result"></div>
-</div>
+
+  <div class="text-center">
+    <h1 style="background-color: #020d24;" class="text-4xl font-bold text-[#7e70f4]">Yes or No Decision，random Yes No Button will answer your questions with Yes or No</h1>
+    <h2 style="background-color: #020d24;" class="text-2xl font-medium text-[#7e70f4]">Get a random simple Yes or No Answer by yes no button</h2>
+  </div>
+  <div id="body-main" class="mainbutton">
+  <div id="result" class="yes no">YES or NO</div>
+<button id="yesNoButton">Click Me!</button>
+
 <script>
-    function askQuestion() {
-        var question = document.getElementById('question').value;
-        var result = getAnswer(question);
-        // Set the background color based on the answer
-        var resultColor = result === "Yes" ? "#4CAF50" : "#F44336"; // Green for "Yes", red for "No"
-
-// Display the question and answer together
-
-var formattedResult = `"${question}" \n\n ${result}`;
-
-document.getElementById('result').textContent = formattedResult;
-document.getElementById('result').style.backgroundColor = resultColor;
-}
-
-
-    function getAnswer(question) {
-        var answers = ["Yes", "No"];
-        var randomIndex = Math.floor(Math.random() * answers.length);
-        return answers[randomIndex];
+    function showResult(result) {
+        document.getElementById('result').className = '';
+        document.getElementById('result').textContent = result;
+        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
     }
+
+    document.getElementById('yesNoButton').addEventListener('click', function() {
+        var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
+        showResult(randomResult);
+    });
 </script>
+
+</div>
 
 <footer class="bg-[#020d24] text-white">
   <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
@@ -166,15 +147,15 @@ document.getElementById('result').style.backgroundColor = resultColor;
   </div>
 </footer>
 <div style="display: none;">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-NZY24GZMKZ');
-  </script>
-  </div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NZY24GZMKZ');
+</script>
+</div>
 </body>
 </html>

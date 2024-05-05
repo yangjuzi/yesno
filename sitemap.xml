@@ -3,36 +3,36 @@
   <url>
     <loc>https://yesno.pro/</loc>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/index.html</loc>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/yes-no-oracle.html</loc>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/yes-no-wheel.html</loc>
     <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/yes-no-tarot.html</loc>
     <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/yes-no-button.html</loc>
     <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://yesno.pro/yes-no-astrology.html</loc>
     <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
 </urlset>

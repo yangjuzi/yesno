@@ -8,7 +8,45 @@
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/yes-no-button.html" />
      
+    <header class="site-head bg-base nav">
+      <a href="./yes-no-oracle.html">Yes No Oracle</a>
+      <a href="./yes-no-wheel.html">Yes No Wheel</a>
+      <a href="./yes-no-tarot.html">Yes No Tarot</a>
+      <a href="./yes-no-button.html">Yes No Button</a>
+      <a href="./yes-no-astrology.html">Yes No Astrology</a>
+      <a href="./blog.html">Blog</a>
+    </header>
+     
     <style>
+     .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #020d24; /* Dark background color for the nav */
+    padding: 1rem 0; /* Padding for some spacing */
+  }
+
+  .nav a {
+    color: white; /* Default font color */
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Spacing around the links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
+    color: #acacaf; /* Font color change on hover */
+  }
+
+  body {
+      background-color: black;
+      color: white;
+      /*font-family: American Typewriter, serif;
+      font-variant: small-caps;*/
+      text-align: center; /* Center align the content */
+    }
+     
+   
       
     
         #body-main {
@@ -16,7 +54,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color:#020d24;
+            
             margin: 0px;
 			min-height:80vh;
         }
@@ -74,43 +112,15 @@
           -webkit-text-fill-color: transparent;
         }
     </style>
-	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
+<script src="js/tailwind.3.4.1.js"></script>
 </head>
 <body>
 	
-  <!-- Navbar Dropdown 2 rows -->
-  <section>
-    <div class="h-auto w-screen bg-[#020d24] py-2 text-white [border-bottom:1px_solid_rgb(91,_103,_130)]">
-      <!-- NAVBAR -->
-      <nav class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0" x-data="{isOpen: false, menuOne:false}">
-        <!-- CONTAINER -->
-        <div class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
-          <!-- LOGO - YOU CAN REPLACE THIS -->
-          <a href="#">
-            <img src="favicon.svg" alt="random logo" class="w-32 h-32 object-contain" />
-            
-            
-          </a>
-          <!-- MENU CONTENT 2 -->
-          <div class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0" x-bind:class="isOpen ? 'show' : 'hidden'">
-            <a href="./yes-no-oracle.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Oracle</a>
-            
-            <a href="./yes-no-wheel.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Wheel</a>
-            <a href="./yes-no-tarot.html" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Tarot</a>
-            <a href="./yes-no-button.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Button</a>
-            <a href="./yes-no-astrology.html" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Astrology</a>
-            <a href="./blog.html" class="2 ml-5 rounded-full bg-[#081631] px-6 py-4 text-center font-semibold text-white transition hover:bg-[#2d6ae0] md:ml-10 lg:ml-4" style="background-color:#5340ff;">Blog</a>
-          </div>
-          
-        </div>
-      </nav>
-    </div>
-  </section>
+  
 
   <div class="text-center">
-    <h1 style="background-color: #020d24;" class="text-4xl font-bold text-[#7e70f4]">Yes or No Decision，random Yes No Button will answer your questions with Yes or No</h1>
-    <h2 style="background-color: #020d24;" class="text-2xl font-medium text-[#7e70f4]">Get a random simple Yes or No Answer by yes no button</h2>
+    <h1  class="text-4xl font-bold text-[#7e70f4]">Yes or No Decision，random Yes No Button will answer your questions with Yes or No</h1>
+    <h2  class="text-2xl font-medium text-[#7e70f4]">Get a random simple Yes or No Answer by yes no button</h2>
   </div>
   <div id="body-main" class="mainbutton">
   <div id="result" class="yes no">YES or NO</div>

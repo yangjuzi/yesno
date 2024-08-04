@@ -3,79 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no</title>
-    <meta name="description" content="yes or no help you decide,free,simple,random">
+    <title>yes no oracle help you decide yes or no</title>
+    <meta name="description" content=" Yes No Oracle is here to provide you with clear and concise answers to life's pressing questions">
     <link rel="shortcut icon" href="./favicon.svg" />
-    <link rel="canonical" href="https://yesno.pro/" />
+    <link rel="canonical" href="https://yesno.pro" />
+    <header class="site-head bg-base nav">
+      <a href="./yes-no-oracle.html">Yes No Oracle</a>
+      <a href="./yes-no-wheel.html">Yes No Wheel</a>
+      <a href="./yes-no-tarot.html">Yes No Tarot</a>
+      <a href="./yes-no-button.html">Yes No Button</a>
+      <a href="./yes-no-astrology.html">Yes No Astrology</a>
+      <a href="./blog.html">Blog</a>
+    </header>
+    <center>
+      <title>Yes No Oracle</title>
+      <h1>Yes/No Oracle，welcome to visit simple free yesno.pro</h1>
+      <h2>Breathe in, and breathe out.</h2>
+      <h3>Now Please input your question,then click oracle</h3>
     
-     
+    
+    
+    
+    </center>
     <style>
-     
-      #oracle {
-        display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color:#020d24;
-            margin: 0px;
-			min-height:100vh;
-      }
-     
-    #oracle textarea {
-     
-  /* ... */
-  /* Add desired max-width or use flexbox to fill available space */
-  max-width: none;
-  width: 60%;
-  /* ... */
+     .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #020d24; /* Dark background color for the nav */
+    padding: 1rem 0; /* Padding for some spacing */
+  }
 
-       min-width: 500px; /* Adjust as needed */
-       /* ... */
-        /* 添加边框 */
-        border: 2px solid #007BFF; /* 可以根据需要更改边框颜色 */
-        
-        /* 调整填充 */
-        padding: 10px;
+  .nav a {
+    color: white; /* Default font color */
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Spacing around the links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-        /* 使用阴影 */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
+    color: #acacaf; /* Font color change on hover */
+  }
 
-        /* 更改背景色 */
-        background-color: #F8FAFC; /* 可以根据需要更改背景色 */
-
-        /* 添加焦点效果 */
-        outline: none; /* 移除浏览器默认焦点样式 */
-        
-        transition: all 0.2s ease-in-out; /* 添加过渡效果，使样式变化更平滑 */
+  body {
+      background-color: black;
+      color: white;
+      /*font-family: American Typewriter, serif;
+      font-variant: small-caps;*/
+      text-align: center; /* Center align the content */
     }
-
-    #oracle textarea:focus {
-        /* 焦点状态下改变边框和阴影 */
-        border-color: #0056b3;
-        box-shadow: 0 ¼em 0.½em rgba(0, 123, 255, 0..png), 0 0 0 0.2em rgba(0, 123, 255, 0.2);
-    }
+     
 
 
 
-      #question {
-          margin-bottom: 10px;
-      }
-      #ask {
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-			background-color:#5340ff;
-            margin-bottom: 20px; /* 按钮和结果之间的间距 */
-            border-radius: 15px;
-            
-            text-align: center;
-            width: max-content;
-            margin: 0 auto;
-        }
-      #result {
+     
+    #result {
             margin: 20px;
             padding: 20px 40px;
             font-size: 100px;
+            width: 60%;
             font-weight: bold;
             text-align: center;
             border-radius: 50px;
@@ -83,50 +70,31 @@
             transition: background-color 0.3s ease;
         }
   </style>
-	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://seo.box/static/css/tailwind.3.4.1.js"></script>
+	<script src="js/tailwind.3.4.1.js"></script>
 </head>
 <body>
 	
-  <!-- Navbar Dropdown 2 rows -->
-  <section>
-    <div class="h-auto w-screen bg-[#020d24] py-2 text-white [border-bottom:1px_solid_rgb(91,_103,_130)]">
-      <!-- NAVBAR -->
-      <nav class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0" x-data="{isOpen: false, menuOne:false}">
-        <!-- CONTAINER -->
-        <div class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
-          <!-- LOGO - YOU CAN REPLACE THIS -->
-          <a href="#">
-            <img src="favicon.svg" alt="random logo" class="w-32 h-32 object-contain" />
-            
-            
-          </a>
-          <!-- MENU CONTENT 2 -->
-          <div class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0" x-bind:class="isOpen ? 'show' : 'hidden'">
-            <a href="./yes-no-oracle.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Oracle</a>
-           
-            <a href="./yes-no-wheel.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Wheel</a>
-            <a href="./yes-no-tarot.html" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Tarot</a>
-            <a href="./yes-no-button.html" class="px-5 py-2 font-semibold text-white transition hover:text-[#F44336] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Button</a>
-            <a href="./yes-no-astrology.html" target="_blank" class="px-5 py-2 font-semibold text-white transition hover:text-[#4CAF50] max-[991px]:block md:px-10 lg:px-4" style="background-color: #5340ff;">Yes No Astrology</a>
-            <a href="./blog.html" class="2 ml-5 rounded-full bg-[#081631] px-6 py-4 text-center font-semibold text-white transition hover:bg-[#2d6ae0] md:ml-10 lg:ml-4" style="background-color:#5340ff;">Blog</a>
-          </div>
-          
-        </div>
-      </nav>
-    </div>
-  </section>
   
-  <div id="oracle" style="display: flex; flex-direction: column;">
-    <h1>Yes/No Oracle</h1>
-    <div>
-        <textarea id="question" placeholder="Please input your question" ></textarea>
-    </div>
+ 
     
-      <button id="ask" onclick="askQuestion()">oracle</button>
-    
-    <div id="result"></div>
+
+  <!-- 在原有的基础上修改 -->
+<div class="w-3/5 mx-auto mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+  <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+      <label for="comment" class="sr-only">Your comment</label>
+      <textarea id="question" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
+  </div>
+  <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+      <button id="ask" onclick="askQuestion()" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+          oracle
+      </button>
+  </div>
 </div>
+
+<!-- 输出结果的div也应用相同的居中逻辑 -->
+<div id="result">
+</div>
+  
 <script>
     function askQuestion() {
         var question = document.getElementById('question').value;

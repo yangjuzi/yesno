@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Allow all CSS and JS files for rendering
+Allow: /styles.css
+Allow: /js/
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://yesno.pro/sitemap.xml
+
+# Block admin or sensitive areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Common crawl delay for politeness
+Crawl-delay: 1 

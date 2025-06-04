@@ -1,365 +1,540 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>yes no tarot</title>
-  <link rel="shortcut icon" href="./favicon.svg" />
-  <link rel="canonical" href="https://yesno.pro/yes-no-tarot.html" />
-<header class="site-head bg-base nav">
-  <a href="./yes-no-oracle.html">Yes No Oracle</a>
-  <a href="./yes-no-wheel.html">Yes No Wheel</a>
-  <a href="./yes-no-tarot.html">Yes No Tarot</a>
-  <a href="./yes-no-button.html">Yes No Button</a>
-  <a href="./yes-no-astrology.html">Yes No Astrology</a>
-  <a href="./blog.html">Blog</a>
-</header>
-<center>
-  <title>Yes or No Tarot</title>
-	<h1>Yes or No Tarot</h1>
-	<h2>Breathe in, and breathe out.</h2>
-	<h3>Now pick a card</h3>
-
-<h4>The answer is: </h4>
-<div class="explanation">
-<p id ='card-explanation'>Pick a card to reveal</p>
-
-</div>
-</center>
-
-  <style>
- .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020d24; /* Dark background color for the nav */
-    padding: 1rem 0; /* Padding for some spacing */
-  }
-
-  .nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around the links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
-    color: #acacaf; /* Font color change on hover */
-  }
-
-     body {
-      background-color: black;
-      color: white;
-      /*font-family: American Typewriter, serif;
-      font-variant: small-caps;*/
-      text-align: center; /* Center align the content */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes No Tarot - Free Tarot Card Reading | Instant Tarot Guidance</title>
+    <meta name="description" content="Get instant yes or no answers through ancient tarot wisdom. Choose a tarot card and receive mystical guidance for your life decisions. Free online tarot reading.">
+    <meta name="keywords" content="tarot reading, yes no tarot, tarot cards, mystical guidance, divination, fortune telling, tarot oracle, free tarot">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Yes No Tarot - Free Tarot Card Reading">
+    <meta property="og:description" content="Get instant yes or no answers through ancient tarot wisdom. Free mystical guidance for your decisions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/yes-no-tarot.html">
+    <meta property="og:image" content="https://yesno.pro/images/tarot-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link rel="canonical" href="https://yesno.pro/yes-no-tarot.html" />
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Ensure page is immediately visible */
+        body {
+            opacity: 1 !important;
+        }
+        
+        .tarot-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+        }
+        
+        .tarot-card {
+            aspect-ratio: 2/3;
+            border: 2px solid var(--accent-bg);
+            border-radius: var(--radius-medium);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--blue-primary);
+        }
+        
+        .tarot-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: calc(var(--radius-medium) - 2px);
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .revealed-card {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .revealed-card img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-heavy);
+            margin-bottom: 1rem;
+        }
+        
+        .card-explanation {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-large);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--blue-primary);
+        }
+        
+        .mystical-bg {
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+            
+            .tarot-card {
+                aspect-ratio: 2/3;
+            }
+            
+            .card-back {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cards-grid {
+                grid-template-columns: repeat(6, 1fr);
+                gap: 0.3rem;
+            }
+        }
+    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Yes No Tarot",
+        "description": "Free tarot card reading for instant yes or no guidance",
+        "url": "https://yesno.pro/yes-no-tarot.html",
+        "applicationCategory": "UtilityApplication",
+        "keywords": "tarot, divination, mystical guidance, fortune telling"
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(11, 100px); /* Align cards in rows of eleven */
-      gap: 10px;
-      justify-content: center;
-      padding: 20px;
-      margin-bottom: 20px; /* Add space at the bottom */
-    }
-    .card {
-      width: 100px;
-      height: 150px;
-      border: 2px solid white;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
-    .card:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-    .card img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-    
-
-  </style>
+    </script>
 </head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./yes-no-oracle.html" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link active">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero mystical-bg">
+        <div class="container">
+            <h1 class="hero-title fade-in">🃏 Tarot Reading</h1>
+            <p class="hero-subtitle fade-in">Ancient wisdom to guide your life's choices</p>
+        </div>
+    </section>
 
-<body>
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Instructions -->
+            <div class="card fade-in text-center mb-4">
+                <h2>How to Perform a Tarot Reading</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🧘‍♀️</div>
+                        <h3>1. Center Yourself</h3>
+                        <p>Take deep breaths and calm your mind</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">💭</div>
+                        <h3>2. Focus Your Question</h3>
+                        <p>Clearly think about your question in your heart</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🃏</div>
+                        <h3>3. Choose a Card</h3>
+                        <p>Trust your intuition to select a tarot card</p>
+                    </div>
+                </div>
+            </div>
 
-  <div class="container" id="tarotContainer">
+            <!-- Tarot Cards -->
+            <div class="card fade-in tarot-container">
+                <div class="text-center mb-4">
+                    <h2>Choose Your Tarot Card</h2>
+                    <p>Quietly feel the energy of each card, then choose the one that draws you most</p>
+                </div>
+                
+                <div class="cards-grid" id="cardsGrid">
+                    <!-- Cards will be generated by JavaScript -->
+                </div>
+            </div>
 
-    <!-- Tarot Cards -->
- 
-    <div class="card" data-card="The Temperance">
-      <img src="images/cover.png" alt="The Temperance">
-    </div>
-    <div class="card" data-card="The Magician">
-      <img src="images/cover.png" alt="The Magician">
-    </div>
-    <!-- Add other card elements similarly -->
-    <div class="card" data-card="The Devil">
-      <img src="images/cover.png" alt="The Devil">
-    </div>
-    <div class="card" data-card="Justice">
-      <img src="images/cover.png" alt="Justice">
-    </div>
-    <div class="card" data-card="The Empress">
-      <img src="images/cover.png" alt="The Empress">
-    </div>
-    <div class="card" data-card="Death">
-      <img src="images/cover.png" alt="Death">
-    </div>
-    <div class="card" data-card="The Emperor">
-      <img src="images/cover.png" alt="The Emperor">
-    </div>
-    <div class="card" data-card="The Pope">
-      <img src="images/cover.png" alt="The Pope">
-    </div>
-    <div class="card" data-card="The High Priestess">
-      <img src="images/cover.png" alt="The High Priestess">
-    </div>
-    <div class="card" data-card="The Hanged Man">
-      <img src="images/cover.png" alt="The Hanged Man">
-    </div>
-    <div class="card" data-card="The Sun">
-      <img src="images/cover.png" alt="The Sun">
-    </div>
-    <div class="card" data-card="The Star">
-      <img src="images/cover.png" alt="The Star">
-    </div>
-    <div class="card" data-card="The World">
-      <img src="images/cover.png" alt="The World">
-    </div>
-    <div class="card" data-card="Judgement">
-      <img src="images/cover.png" alt="Judgement">
-    </div>
-    <div class="card" data-card="The Justice">
-      <img src="images/cover.png" alt="The Justice">
-    </div>
-    <div class="card" data-card="The Wheel of Fortune">
-      <img src="images/cover.png" alt="The Wheel of Fortune">
-    </div>
-    <div class="card" data-card="The Chariot">
-      <img src="images/cover.png" alt="The Chariot">
-    </div>
-    <div class="card" data-card="Strength">
-      <img src="images/cover.png" alt="Strength">
-    </div>
-    <div class="card" data-card="The Fool">
-      <img src="images/cover.png" alt="The Fool">
-    </div>
-    <div class="card" data-card="The Lovers">
-      <img src="images/cover.png" alt="The Lovers">
-    </div>
-    <div class="card" data-card="The Hermit">
-      <img src="images/cover.png" alt="The Hermit">
-    </div>
-    <div class="card" data-card="The Tower">
-      <img src="images/cover.png" alt="The Tower">
-    </div>
-  </div>
+            <!-- Result Display -->
+            <div id="resultContainer" class="card fade-in" style="display: none;">
+                <div class="text-center">
+                    <h2>Your Tarot Guidance</h2>
+                    <div class="revealed-card" id="revealedCard">
+                        <h3 id="cardName"></h3>
+                        <img id="cardImage" src="" alt="Selected tarot card">
+                        <div class="card-explanation">
+                            <h4>Card Interpretation</h4>
+                            <p id="cardExplanation"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <button onclick="resetReading()" class="btn btn-primary">
+                            🔮 New Reading
+                        </button>
+                        <button onclick="shareResult()" class="btn btn-secondary">
+                            📱 Share Result
+                        </button>
+                    </div>
+                </div>
+            </div>
 
- <div class="explanation-container">
-    <p id="card-explanation">Pick a card to reveal</p>
-    <div id="revealed-card" style="display: none;">
-      <h3 id="revealed-card-name"></h3>
-      <img id="revealed-card-image" src="" alt="Revealed Card">
-    </div>
-  </div>
+            <!-- Wisdom Section -->
+            <div class="card fade-in mt-4 mystical-bg">
+                <div class="text-center">
+                    <h3>Tarot Wisdom</h3>
+                    <p class="mt-2">"Tarot cards are not tools for predicting the future, but mirrors that help us understand the present and make wise choices."</p>
+                    <p class="mt-2" style="color: #cbd5e0; font-style: italic;">
+                        Remember, you always have the power to shape your destiny.
+                    </p>
+                    
+                    <div id="clickCounter" class="mt-3" style="display: none;">
+                        <p style="color: #fbb6ce;">You have performed <span id="counterNumber">0</span> readings</p>
+                        <p style="font-size: 0.9rem; color: #cbd5e0;">If you haven't found a satisfying answer after 25 readings, perhaps your heart already knows the answer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  <script>
-    const cards = [
-      "The Temperance", "The Magician", "The Devil", "Justice", "The Empress",
-      "Death", "The Emperor", "The Pope", "The High Priestess", "The Hanged Man",
-      "The Sun", "The Star", "The World", "Judgement", "The Justice", "The Wheel of Fortune",
-      "The Chariot", "Strength", "The Fool", "The Lovers", "The Hermit", "The Tower"
-    ];
+    <!-- Features Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Explore More Mystical Tools</h2>
+                <p>Each method contains unique wisdom</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>🔮 Oracle Reading</h3>
+                    <p>Direct wisdom and answers</p>
+                    <a href="./yes-no-oracle.html" class="btn btn-secondary mt-2">Try Oracle</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🎡 Fortune Wheel</h3>
+                    <p>Let random forces guide you</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Spin Wheel</a>
+                </div>
+                
+                <div class="card">
+                    <h3>⭐ Astrology Guide</h3>
+                    <p>Cosmic wisdom from the stars</p>
+                    <a href="./yes-no-astrology.html" class="btn btn-secondary mt-2">Star Guidance</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-   const explanations = {
-  "The Temperance": {
-    yes: "Yes, take a balanced approach and find harmony in your situation.",
-    no: "No, there is imbalance or discord present. Seek to restore harmony first."
-  },
-  "The Magician": {
-    yes: "Yes, you have the power and skills to make it happen.",
-    no: "No, you may lack the necessary resources or focus at this time."
-  },
-  "The Devil": {
-    yes: "Yes, but be cautious of temptation or negative influences.",
-    no: "No, there are obstacles or unhealthy attachments in your way."
-  },
-   "The Empress": {
-    yes: "Yes, nurture your ideas and projects as they have growth potential.",
-    no: "No, focus on self-care and stability before proceeding."
-  },
-  "Death": {
-    yes: "Yes, embrace change and transformation for new beginnings.",
-    no: "No, it's time to let go of what no longer serves you."
-  },
-  "The Emperor": {
-    yes: "Yes, take charge with authority and structure.",
-    no: "No, consider if your approach is too rigid or controlling."
-  },
-  "The Pope": {
-    yes: "Yes, seek guidance from trusted sources or wisdom traditions.",
-    no: "No, you may need to question established beliefs or authority figures."
-  },
-  "The High Priestess": {
-    yes: "Yes, trust your intuition and inner knowledge.",
-    no: "No, there may be hidden factors or mysteries to uncover."
-  },
-  "The Hanged Man": {
-    yes: "Yes, embrace a different perspective or pause for reflection.",
-    no: "No, there may be delays or sacrifices required before progress."
-  },
-  "The Sun": {
-    yes: "Yes, bright opportunities and success are on the horizon.",
-    no: "No, there may be temporary setbacks or obstacles to overcome."
-  },
-  "The Star": {
-    yes: "Yes, have hope and follow your dreams with optimism.",
-    no: "No, you may need to reassess your goals or expectations."
-  },
-  "The World": {
-    yes: "Yes, completion and fulfillment are within reach.",
-    no: "No, there may be unfinished business or challenges ahead."
-  },
-  "Judgement": {
-    yes: "Yes, it's time for self-reflection and making amends.",
-    no: "No, avoid rushing into decisions or being overly critical."
-  },
-  "The Moon": {
-    yes: "Yes, your inner wisdom is guiding you towards a positive outcome.",
-    no: "No, cautioning against decisions made in the dark of confusion or fear."
-  },
-  "The Justice": {
-    yes: "Yes, fairness and truth will prevail.",
-    no: "No, be wary of imbalances or unresolved conflicts."
-  },
-  "The Wheel of Fortune": {
-    yes: "Yes, embrace change and cycles of life with optimism.",
-    no: "No, be cautious of unpredictability or unexpected changes."
-  },
-  "The Chariot": {
-    yes: "Yes, move forward with confidence and determination.",
-    no: "No, reassess your direction or approach before proceeding."
-  },
-  "Strength": {
-    yes: "Yes, have courage and resilience to overcome challenges.",
-    no: "No, focus on inner strength and patience before taking action."
-  },
-  "The Fool": {
-    yes: "Yes, take a leap of faith and embrace new adventures.",
-    no: "No, consider potential risks or consequences before acting impulsively."
-  },
-  "The Lovers": {
-    yes: "Yes, follow your heart and make choices based on love and harmony.",
-    no: "No, there may be conflicts or choices that require careful consideration."
-  },
-  "The Hermit": {
-    yes: "Yes, seek solitude for introspection and inner guidance.",
-    no: "No, avoid isolation or withdrawal; seek support and connection."
-  },
-  "The Tower": {
-    yes: "Yes, embrace necessary upheavals or changes for growth.",
-    no: "No, be cautious of sudden disruptions or unexpected challenges."
-  }
-};
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">How to Use</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                </div>
+                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Ensure page is immediately visible
+        document.body.classList.add('loaded');
+        
+        let clickCounter = 0;
+        let currentCard = null;
 
-const cardImages = {
-  "The Temperance": "images/The_Temperance.png",
-  "The Magician": "images/The_Magician.png",
-  "The Devil": "images/The_Devil.png",
-  "The Justice": "images/Justice.png",
-  "The Empress": "images/The_Empress.png",
-  "Death": "images/Death.png",
-  "The Emperor": "images/The_Emperor.png",
-  "The Pope": "images/The_Pope.png",
-  "The High Priestess": "images/The_High_Priestess.png",
-  "The Hanged Man": "images/The_Hanged_Man.png",
-  "The Sun": "images/The_Sun.png",
-  "The Star": "images/The_Star.png",
-  "The World": "images/The_World.png",
-  "Judgement": "images/Judgement.png",
-  "The Moon": "images/The_Moon.png",
-  "The Wheel of Fortune": "images/The_Wheel_of_Fortune.png",
-  "The Chariot": "images/The_Chariot.png",
-  "Strength": "images/Strength.png",
-  "The Fool": "images/The_Fool.png",
-  "The Lovers": "images/The_Lovers.png",
-  "The Hermit": "images/The_Hermit.png",
-  "The Tower": "images/The_Tower.png"
-};
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
 
+        // Tarot cards data
+        const tarotCards = [
+            "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor", "The Hierophant", "The Lovers", 
+            "The Chariot", "Strength", "The Hermit", "Wheel of Fortune", "Justice", "The Hanged Man", "Death", 
+            "Temperance", "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
+        ];
 
+        const cardMeanings = {
+            "The Fool": {
+                yes: "Yes, boldly take that first step, a new adventure awaits you.",
+                no: "No, now is not the time, you need more preparation and reflection."
+            },
+            "The Magician": {
+                yes: "Yes, you possess all the skills and resources needed to achieve your goal.",
+                no: "No, you may lack the necessary focus or resources."
+            },
+            "The High Priestess": {
+                yes: "Yes, trust your intuition and inner wisdom.",
+                no: "No, there are hidden factors that need further exploration."
+            },
+            "The Empress": {
+                yes: "Yes, nurture your ideas, they have potential for growth.",
+                no: "No, focus on self-care and stability."
+            },
+            "The Emperor": {
+                yes: "Yes, proceed with authority and structure.",
+                no: "No, your approach may be too rigid or controlling."
+            },
+            "The Hierophant": {
+                yes: "Yes, seek guidance from trusted sources or traditional wisdom.",
+                no: "No, you may need to question established beliefs or authority."
+            },
+            "The Lovers": {
+                yes: "Yes, follow your heart and choose based on love and harmony.",
+                no: "No, there may be conflicts or choices that need careful consideration."
+            },
+            "The Chariot": {
+                yes: "Yes, move forward with confidence and determination.",
+                no: "No, reassess your direction or approach before continuing."
+            },
+            "Strength": {
+                yes: "Yes, you have the courage and resilience to overcome challenges.",
+                no: "No, focus on inner strength and patience before taking action."
+            },
+            "The Hermit": {
+                yes: "Yes, seek solitude for introspection and inner guidance.",
+                no: "No, avoid isolation or withdrawal, seek support and connection."
+            },
+            "Wheel of Fortune": {
+                yes: "Yes, embrace change and life's cycles, stay optimistic.",
+                no: "No, beware of unpredictability or unexpected changes."
+            },
+            "Justice": {
+                yes: "Yes, fairness and truth will prevail.",
+                no: "No, beware of imbalance or unresolved conflicts."
+            },
+            "The Hanged Man": {
+                yes: "Yes, embrace a different perspective or pause for reflection.",
+                no: "No, delay or sacrifice may be needed before progress can be made."
+            },
+            "Death": {
+                yes: "Yes, embrace change and transformation, welcome new beginnings.",
+                no: "No, it's time to let go of what no longer serves you."
+            },
+            "Temperance": {
+                yes: "Yes, take a balanced approach and find harmony in your situation.",
+                no: "No, there's imbalance or discord that needs healing first."
+            },
+            "The Devil": {
+                yes: "Yes, but beware of temptations or negative influences.",
+                no: "No, there are obstacles or unhealthy attachments in your path."
+            },
+            "The Tower": {
+                yes: "Yes, embrace necessary upheaval or change for growth.",
+                no: "No, beware of sudden disruption or unexpected challenges."
+            },
+            "The Star": {
+                yes: "Yes, have hope and optimistically pursue your dreams.",
+                no: "No, you may need to reassess your goals or expectations."
+            },
+            "The Moon": {
+                yes: "Yes, your inner wisdom is guiding you toward a positive outcome.",
+                no: "No, beware of decisions made in the darkness of confusion or fear."
+            },
+            "The Sun": {
+                yes: "Yes, bright opportunities and success are ahead.",
+                no: "No, there may be temporary setbacks or obstacles to overcome."
+            },
+            "Judgement": {
+                yes: "Yes, it's time for self-reflection and renewal.",
+                no: "No, avoid hasty decisions or being overly judgmental."
+            },
+            "The World": {
+                yes: "Yes, completion and fulfillment are within reach.",
+                no: "No, there may be unfinished business or challenges ahead."
+            }
+        };
 
- let clickCounter = 0;
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
+        // Initialize cards
+        function initTarotCards() {
+            const cardsGrid = document.getElementById('cardsGrid');
+            cardsGrid.innerHTML = '';
 
-      function pickCard() {
+            for (let i = 0; i < 22; i++) {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'tarot-card';
+                cardDiv.onclick = () => selectCard(i);
+                
+                cardDiv.innerHTML = `
+                    <div class="card-back">
+                        🃏
+                    </div>
+                `;
+                
+                cardsGrid.appendChild(cardDiv);
+            }
+        }
 
- 	 clickCounter++; // Increment click counter on each click
+        // Select a card
+        function selectCard(index) {
+            clickCounter++;
+            
+            // Random card selection
+            const randomCard = tarotCards[Math.floor(Math.random() * tarotCards.length)];
+            const isYes = Math.random() < 0.5;
+            const explanation = cardMeanings[randomCard][isYes ? 'yes' : 'no'];
+            
+            currentCard = {
+                name: randomCard,
+                result: isYes ? 'Yes' : 'No',
+                explanation: explanation
+            };
+            
+            showResult();
+            updateClickCounter();
+            
+            // Check for excessive clicking
+            if (clickCounter > 25) {
+                setTimeout(() => {
+                    alert('If you haven\'t found a satisfying answer after 25 readings, perhaps your heart already knows the answer. Trust yourself, the universe is with you!');
+                }, 1000);
+            }
+        }
 
-      if (clickCounter > 25) {
-        alert("If you have clicked 25 times and haven't gotten an answer, you already know what you should do. Go ahead and do it, the universe is with you!");
-        return;
-      }
+        // Show result
+        function showResult() {
+            const resultContainer = document.getElementById('resultContainer');
+            const cardName = document.getElementById('cardName');
+            const cardExplanation = document.getElementById('cardExplanation');
+            
+            cardName.textContent = `${currentCard.name} - ${currentCard.result}`;
+            cardExplanation.textContent = currentCard.explanation;
+            
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
 
-      shuffle(cards);
-      const randomCard = cards[Math.floor(Math.random() * cards.length)];
-      const response = Math.random() < 0.5 ? 'yes' : 'no';
-      const explanation = explanations[randomCard][response];
+        // Update click counter
+        function updateClickCounter() {
+            const counter = document.getElementById('clickCounter');
+            const counterNumber = document.getElementById('counterNumber');
+            
+            if (clickCounter > 3) {
+                counter.style.display = 'block';
+                counterNumber.textContent = clickCounter;
+            }
+        }
 
-      const explanationElement = document.getElementById('card-explanation');
-      explanationElement.textContent = `You picked "${randomCard}":\n\n${explanation}`;
+        // Reset reading
+        function resetReading() {
+            document.getElementById('resultContainer').style.display = 'none';
+            currentCard = null;
+            initTarotCards();
+        }
 
-      const revealedCardName = document.getElementById('revealed-card-name');
-      revealedCardName.textContent = randomCard;
+        // Share result
+        function shareResult() {
+            if (!currentCard) return;
+            
+            const shareText = `I drew "${currentCard.name}" in my tarot reading, and the answer is: ${currentCard.result}\n\n${currentCard.explanation}\n\nTry YesNo.Pro for more mystical guidance!`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Yes No Tarot - My Tarot Reading Result',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Result copied to clipboard!');
+                });
+            }
+        }
 
-      const revealedCardImage = document.getElementById('revealed-card-image');
-      revealedCardImage.src = cardImages[randomCard];
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initTarotCards();
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-      const revealedCardContainer = document.getElementById('revealed-card');
-      revealedCardContainer.style.display = 'block';
-    }
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.2s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
 
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
 
-    const cardElements = document.querySelectorAll('.card');
-    cardElements.forEach(card => card.addEventListener('click', pickCard));
-  </script>
-<footer class="bg-[#020d24] text-white">
-  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
-    <div class="flex flex-col items-center">
-      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
-      </div>
-      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
-      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<div style="display: none;">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-NZY24GZMKZ');
-  </script>
-  </div>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const navMenu = document.getElementById('navMenu');
+                const navToggle = document.querySelector('.nav-toggle');
+                
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
 </body>
 </html>

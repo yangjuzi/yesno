@@ -1,167 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no blog</title>
-    <meta name="description" content="yes or no helps you decide">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making Blog - Expert Guidance & Tips | YesNo.Pro</title>
+    <meta name="description" content="Discover expert tips on decision making, explore ancient wisdom traditions like tarot and astrology, and master the art of making better life choices.">
+    <meta name="keywords" content="decision making blog, life choices, decision tips, tarot guidance, astrology wisdom, oracle reading, decision tools">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Decision Making Blog - Expert Guidance & Tips">
+    <meta property="og:description" content="Discover expert tips on decision making and ancient wisdom traditions for better life choices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/blog.html">
+    <meta property="og:image" content="https://yesno.pro/images/blog-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/blog.html" />
-    <header class="site-head bg-base nav">
-      <a href="./yes-no-oracle.html">Yes No Oracle</a>
-      <a href="./yes-no-wheel.html">Yes No Wheel</a>
-      <a href="./yes-no-tarot.html">Yes No Tarot</a>
-      <a href="./yes-no-button.html">Yes No Button</a>
-      <a href="./yes-no-astrology.html">Yes No Astrology</a>
-      <a href="./blog.html">Blog</a>
-    </header>
-     
+    <link rel="stylesheet" href="./styles.css">
     <style>
-     .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020d24; /* Dark background color for the nav */
-    padding: 1rem 0; /* Padding for some spacing */
-  }
-
-  .nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around the links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
-    color: #acacaf; /* Font color change on hover */
-  }
-
-  body {
-      background-color: black;
-      color: white;
-      /*font-family: American Typewriter, serif;
-      font-variant: small-caps;*/
-      text-align: center; /* Center align the content */
-    }
-      
-     
-    
-        #body-main {
+        /* Ensure page is immediately visible */
+        body {
+            opacity: 1 !important;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 0;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--blue-primary);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-primary));
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-            margin: 0px;
-			min-height:100vh;
+            font-size: 3rem;
+            color: white;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
         }
-        #result {
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 100px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 50px;
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-category {
+            background: var(--accent-bg);
+            color: var(--blue-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-large);
+            font-size: 0.8rem;
+            font-weight: 600;
             display: inline-block;
-            transition: background-color 0.3s ease;
+            margin-bottom: 1rem;
         }
-        #yesNoButton {
-            padding: 10px 20px;
-            font-size: 50px;
-            cursor: pointer;
-			background-color:#5340ff;
-            margin-bottom: 20px; /* 按钮和结果之间的间距 */
-            border-radius: 15px;
+        
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
         }
-        .yes {
-            background-color: #4CAF50;
+        
+        .blog-title a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-title a:hover {
+            color: var(--blue-primary);
+        }
+        
+        .blog-excerpt {
+            color: var(--secondary-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+        
+        .blog-date {
+            font-weight: 500;
+        }
+        
+        .read-more {
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--purple-primary);
+        }
+        
+        .featured-post {
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-primary));
             color: white;
+            margin-bottom: 3rem;
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            text-align: center;
         }
-        .no {
-            background-color: #F44336;
+        
+        .featured-post h2 {
             color: white;
+            margin-bottom: 1rem;
         }
-        .yes.no {
-          color: currentColor;
-          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+        
+        .featured-post p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-post {
+                padding: 2rem 1rem;
+            }
         }
     </style>
-	 
-   <script src="js/tailwind.3.4.1.js"></script>
-    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "YesNo.Pro Decision Making Blog",
+        "description": "Expert guidance on decision making, ancient wisdom, and life choices",
+        "url": "https://yesno.pro/blog.html",
+        "author": {
+            "@type": "Organization",
+            "name": "YesNo.Pro"
+        }
+    }
+    </script>
 </head>
-<body>
-	
- 
-  <div id="body-main" class="mainbutton">
-  <div id="result" class="yes no">YES or NO</div>
-<button id="yesNoButton">Click Me!</button>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./yes-no-oracle.html" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link active">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<script>
-    var countdownTimer;
-    var countdown = 3;
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title fade-in">📝 Decision Making Blog</h1>
+            <p class="hero-subtitle fade-in">Expert guidance and ancient wisdom for better life choices</p>
+        </div>
+    </section>
 
-    function showResult(result) {
-        clearInterval(countdownTimer);
-        document.getElementById('result').className = '';
-        document.getElementById('result').textContent = result;
-        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
-    }
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Blog Introduction -->
+            <div class="blog-intro fade-in">
+                <h2>Welcome to Our Decision Making Hub</h2>
+                <p>Explore expert insights, ancient wisdom traditions, and practical tips to help you make better decisions in every aspect of your life. From understanding tarot symbolism to mastering the art of intuitive choice-making.</p>
+            </div>
 
-    function countdownEffect() {
-        var timerCount = countdown;
-        countdownTimer = setInterval(function() {
-            document.getElementById('result').textContent = 'YES or NO... ' + timerCount + 's';
-            timerCount--;
-            if (timerCount < 0) {
-                clearInterval(countdownTimer);
+            <!-- Featured Post -->
+            <div class="featured-post fade-in">
+                <h2>🌟 Featured Article</h2>
+                <h3 style="color: white; margin-bottom: 1rem;">The Science Behind Intuitive Decision Making</h3>
+                <p>Discover how your intuition works and why it's often more accurate than you think. Learn to trust your inner wisdom while making important life decisions.</p>
+                <a href="./blog-intuitive-decision-making.html" class="btn btn-white">Read Full Article</a>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🧠</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Decision Science</span>
+                        <h3 class="blog-title">
+                            <a href="./blog-intuitive-decision-making.html">The Science Behind Intuitive Decision Making</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Learn how your brain processes decisions intuitively and why trusting your gut feeling can lead to better outcomes. Discover the neuroscience behind intuition.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 20, 2024</span>
+                            <a href="./blog-intuitive-decision-making.html" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🃏</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Tarot Wisdom</span>
+                        <h3 class="blog-title">
+                            <a href="./blog-tarot-beginners-guide.html">Tarot for Beginners: A Complete Guide to Card Meanings</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Unlock the mysteries of tarot cards with our comprehensive beginner's guide. Learn card meanings, spreads, and how to read for yourself and others.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 18, 2024</span>
+                            <a href="./blog-tarot-beginners-guide.html" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">⭐</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Astrology</span>
+                        <h3 class="blog-title">
+                            <a href="./blog-zodiac-decision-making.html">How Your Zodiac Sign Influences Your Decision-Making Style</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Explore how your astrological sign shapes the way you approach choices and decisions. Discover your natural decision-making strengths and blind spots.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 15, 2024</span>
+                            <a href="./blog-zodiac-decision-making.html" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🎯</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Life Choices</span>
+                        <h3 class="blog-title">
+                            <a href="./blog-overcoming-decision-paralysis.html">Overcoming Decision Paralysis: 7 Proven Strategies</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Break free from analysis paralysis with these effective techniques. Learn how to make confident decisions even when faced with overwhelming options.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 12, 2024</span>
+                            <a href="./blog-overcoming-decision-paralysis.html" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🔮</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Ancient Wisdom</span>
+                        <h3 class="blog-title">
+                            <a href="./blog-divination-tools-comparison.html">Oracle vs Tarot vs Astrology: Which Divination Tool is Right for You?</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Compare different divination methods and discover which ancient wisdom tradition resonates most with your personal decision-making style and needs.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 10, 2024</span>
+                            <a href="./blog-divination-tools-comparison.html" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder for future post -->
+                <article class="blog-card fade-in" style="opacity: 0.6;">
+                    <div class="blog-image">💡</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Coming Soon</span>
+                        <h3 class="blog-title">
+                            <span style="color: var(--secondary-text);">More Wisdom Coming Soon</span>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Stay tuned for more insights on decision making, ancient wisdom, and life guidance. New articles published weekly.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span style="color: var(--secondary-text);">Stay Tuned</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="card fade-in mt-4" style="background: linear-gradient(135deg, var(--tertiary-bg), var(--secondary-bg)); text-align: center;">
+                <h3>Stay Updated with Our Latest Insights</h3>
+                <p>Get weekly decision-making tips and ancient wisdom delivered to your inbox</p>
+                <div style="max-width: 400px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; min-width: 200px; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-medium);">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tools Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Try Our Decision Making Tools</h2>
+                <p>Put your newfound knowledge to practice with our interactive tools</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>🔮 Oracle Reading</h3>
+                    <p>Get divine wisdom for your decisions</p>
+                    <a href="./yes-no-oracle.html" class="btn btn-secondary mt-2">Consult Oracle</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🃏 Tarot Cards</h3>
+                    <p>Ancient wisdom through card readings</p>
+                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">Draw Cards</a>
+                </div>
+                
+                <div class="card">
+                    <h3>⭐ Astrology</h3>
+                    <p>Cosmic guidance for your choices</p>
+                    <a href="./yes-no-astrology.html" class="btn btn-secondary mt-2">Star Reading</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🎡 Decision Wheel</h3>
+                    <p>Let the wheel guide your choice</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Spin Wheel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">How to Use</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                </div>
+                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure page is immediately visible
+        document.body.classList.add('loaded');
+        
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
             }
-        }, 1000);
+        });
+    </script>
 
-        // 显示最终结果
-        setTimeout(function() {
-          var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
-          showResult(randomResult);
-        }, countdown * 1000);
-    }
-
-    document.getElementById('yesNoButton').addEventListener('click', function() {
-        document.getElementById('result').textContent = 'YES or NO... ' + countdown + 's';
-        countdownEffect();
-    });
-</script>
-
-</div>
-
-<footer class="bg-[#020d24] text-white">
-  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
-    <div class="flex flex-col items-center">
-      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
-      </div>
-      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
-      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<div style="display: none;">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-NZY24GZMKZ');
-  </script>
-  </div>
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
 </body>
 </html>

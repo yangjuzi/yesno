@@ -1,171 +1,626 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no button</title>
-    <meta name="description" content="yes or no helps you decide">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes No Button - Quick Decision Maker | Instant Yes or No Answers</title>
+    <meta name="description" content="Get instant yes or no answers with a simple button click. The fastest and most direct way to make decisions. Free online decision tool.">
+    <meta name="keywords" content="yes no button, quick decision, instant answer, decision maker, yes or no, quick choice, fast decision tool">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Yes No Button - Quick Decision Maker">
+    <meta property="og:description" content="Get instant yes or no answers with a simple button click. The fastest way to make decisions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/yes-no-button.html">
+    <meta property="og:image" content="https://yesno.pro/images/button-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/yes-no-button.html" />
-     
-    <header class="site-head bg-base nav">
-      <a href="./yes-no-oracle.html">Yes No Oracle</a>
-      <a href="./yes-no-wheel.html">Yes No Wheel</a>
-      <a href="./yes-no-tarot.html">Yes No Tarot</a>
-      <a href="./yes-no-button.html">Yes No Button</a>
-      <a href="./yes-no-astrology.html">Yes No Astrology</a>
-      <a href="./blog.html">Blog</a>
-    </header>
-     
+    <link rel="stylesheet" href="./styles.css">
     <style>
-     .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020d24; /* Dark background color for the nav */
-    padding: 1rem 0; /* Padding for some spacing */
-  }
-
-  .nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around the links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
-    color: #acacaf; /* Font color change on hover */
-  }
-
-  body {
-      background-color: black;
-      color: white;
-      /*font-family: American Typewriter, serif;
-      font-variant: small-caps;*/
-      text-align: center; /* Center align the content */
-    }
-     
-   
-      
-    
-        #body-main {
+        /* Ensure page is immediately visible */
+        body {
+            opacity: 1 !important;
+        }
+        
+        .decision-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .mode-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--blue-primary);
+        }
+        
+        .mode-card.active {
+            border-color: var(--blue-primary);
+            background: var(--accent-bg);
+        }
+        
+        .decision-button {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem auto;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-            margin: 0px;
-			min-height:80vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        #result {
-    margin: 20px;
-    /* 设置宽度和高度一致，形成圆形 */
-    width: 400px;
-    height: 400px;
-    line-height: 400px; /* 保证文本垂直居中 */
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%; /* 创建圆形 */
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    border: 3px solid white; /* 可选：增加边框使圆形更加明显 */
-}
-        #yesNoButton {
-            padding: 10px 20px;
-            font-size: 50px;
+        
+        .decision-button:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .decision-button:active {
+            transform: scale(0.95);
+        }
+        
+        .decision-button.yes {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+        
+        .decision-button.no {
+            background: linear-gradient(135deg, #f44336, #da190b);
+            color: white;
+        }
+        
+        .decision-button.random {
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-primary));
+            color: white;
+        }
+        
+        .question-input {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-large);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .result-display {
+            background: var(--accent-bg);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-left: 4px solid var(--blue-primary);
+        }
+        
+        .result-text {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .result-yes {
+            color: var(--green-primary);
+        }
+        
+        .result-no {
+            color: var(--red-primary);
+        }
+        
+        .mode-selector {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-large);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .mode-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .mode-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-large);
+            background: var(--bg);
             cursor: pointer;
-			background-color:#7e70f4;
-            margin-bottom: 20px; /* 按钮和结果之间的间距 */
-            border-radius: 15px;
-			
-    color: white; /* 文字白色 */
-    
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    
-    
-    
+            transition: all 0.3s ease;
         }
-
-		/* 按下后的按钮样式 */
-#yesNoButton:active {
-    background-color: #1f0edb; /* 更深的绿色，按下时改变 */
-    box-shadow: 0 5px #666; /* 添加阴影效果 */
-    transform: translateY(4px); /* 让按钮有“按下去”的感觉 */
-}
-        .yes {
-            background-color: #4CAF50;
+        
+        .mode-tab.active {
+            background: var(--blue-primary);
             color: white;
+            border-color: var(--blue-primary);
         }
-        .no {
-            background-color: #F44336;
-            color: white;
+        
+        .mode-tab:hover:not(.active) {
+            background: var(--accent-bg);
         }
-        .yes.no {
-          color: currentColor;
-          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+        
+        @media (max-width: 768px) {
+            .decision-button {
+                width: 150px;
+                height: 150px;
+                font-size: 1.2rem;
+            }
+            
+            .decision-modes {
+                grid-template-columns: 1fr;
+            }
+            
+            .mode-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mode-tab {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .decision-button {
+                width: 120px;
+                height: 120px;
+                font-size: 1rem;
+            }
+            
+            .result-text {
+                font-size: 2rem;
+            }
         }
     </style>
-<script src="js/tailwind.3.4.1.js"></script>
-</head>
-<body>
-	
-  
-
-  <div class="text-center">
-    <h1  class="text-4xl font-bold text-[#7e70f4]">Yes or No Decision，random Yes No Button will answer your questions with Yes or No</h1>
-    <h2  class="text-2xl font-medium text-[#7e70f4]">Get a random simple Yes or No Answer by yes no button</h2>
-  </div>
-  <div id="body-main" class="mainbutton">
-  <div id="result" class="yes no">YES or NO</div>
-<button id="yesNoButton">Click Me!</button>
-
-<script>
-    function showResult(result) {
-        document.getElementById('result').className = '';
-        document.getElementById('result').textContent = result;
-        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Yes No Button",
+        "description": "Quick decision maker with instant yes or no button answers",
+        "url": "https://yesno.pro/yes-no-button.html",
+        "applicationCategory": "UtilityApplication",
+        "keywords": "yes no button, quick decision, instant answer, decision maker"
     }
+    </script>
+</head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./yes-no-oracle.html" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link active">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    document.getElementById('yesNoButton').addEventListener('click', function() {
-        var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
-        showResult(randomResult);
-    });
-</script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title fade-in">🔘 Quick Decision</h1>
+            <p class="hero-subtitle fade-in">The fastest way to get yes or no answers</p>
+        </div>
+    </section>
 
-</div>
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Instructions -->
+            <div class="card fade-in text-center mb-4">
+                <h2>Three Ways to Get Your Answer</h2>
+                <p>Choose the decision method that feels right for you</p>
+            </div>
 
-<footer class="bg-[#020d24] text-white">
-  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
-    <div class="flex flex-col items-center">
-      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
-      </div>
-      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
-      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<div style="display: none;">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            <!-- Question Input -->
+            <div class="question-input fade-in">
+                <div class="text-center mb-3">
+                    <h3>What's your question?</h3>
+                    <p>Optional: Enter your question to personalize the result</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question" class="form-label">Your Question</label>
+                    <textarea 
+                        id="question" 
+                        class="form-textarea" 
+                        placeholder="e.g., Should I call my friend tonight?"
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
 
-  gtag('config', 'G-NZY24GZMKZ');
-</script>
-</div>
+            <!-- Mode Selector -->
+            <div class="mode-selector fade-in">
+                <h3>Choose Your Decision Method</h3>
+                <div class="mode-tabs">
+                    <button class="mode-tab active" onclick="setMode('direct')" id="directTab">
+                        🎯 Direct Choice
+                    </button>
+                    <button class="mode-tab" onclick="setMode('random')" id="randomTab">
+                        🎲 Random Answer
+                    </button>
+                    <button class="mode-tab" onclick="setMode('question')" id="questionTab">
+                        💭 Question-Based
+                    </button>
+                </div>
+            </div>
+
+            <!-- Decision Interface -->
+            <div class="card fade-in">
+                <!-- Direct Choice Mode -->
+                <div id="directMode" class="decision-mode">
+                    <div class="text-center mb-4">
+                        <h3>Choose Your Answer</h3>
+                        <p>Click on the option that feels right to you</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <button class="decision-button yes" onclick="selectAnswer('Yes')">
+                            YES
+                        </button>
+                        <button class="decision-button no" onclick="selectAnswer('No')">
+                            NO
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Random Answer Mode -->
+                <div id="randomMode" class="decision-mode" style="display: none;">
+                    <div class="text-center mb-4">
+                        <h3>Let Chance Decide</h3>
+                        <p>Click the button to get a random yes or no answer</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center;">
+                        <button class="decision-button random" onclick="getRandomAnswer()" id="randomButton">
+                            🎲 GET ANSWER
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question-Based Mode -->
+                <div id="questionMode" class="decision-mode" style="display: none;">
+                    <div class="text-center mb-4">
+                        <h3>Question Analysis</h3>
+                        <p>Get an answer based on question analysis and intuition</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center;">
+                        <button class="decision-button random" onclick="analyzeQuestion()" id="analyzeButton">
+                            🧠 ANALYZE
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Display -->
+            <div id="resultContainer" class="result-display fade-in" style="display: none;">
+                <h3>Your Answer</h3>
+                <div class="result-text" id="resultText"></div>
+                <p id="resultMessage"></p>
+                <div class="mt-3">
+                    <button onclick="resetDecision()" class="btn btn-primary">
+                        🔄 Try Again
+                    </button>
+                    <button onclick="shareResult()" class="btn btn-secondary">
+                        📱 Share Result
+                    </button>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="card fade-in mt-4" style="background: linear-gradient(135deg, var(--tertiary-bg), var(--secondary-bg));">
+                <div class="text-center">
+                    <h3>How Each Method Works</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                            <h4>Direct Choice</h4>
+                            <p>Trust your first instinct and choose the answer that feels right</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎲</div>
+                            <h4>Random Answer</h4>
+                            <p>Let pure chance decide with a randomized yes or no response</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">💭</div>
+                            <h4>Question-Based</h4>
+                            <p>Get guidance based on the nature and energy of your question</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>More Decision Tools</h2>
+                <p>Explore different approaches to decision making</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>🎡 Decision Wheel</h3>
+                    <p>Spin the wheel for visual decision making</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Spin Wheel</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🔮 Oracle Reading</h3>
+                    <p>Get deeper wisdom and guidance</p>
+                    <a href="./yes-no-oracle.html" class="btn btn-secondary mt-2">Consult Oracle</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🃏 Tarot Cards</h3>
+                    <p>Ancient wisdom for modern decisions</p>
+                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">Draw Cards</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">How to Use</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                </div>
+                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure page is immediately visible
+        document.body.classList.add('loaded');
+        
+        let currentMode = 'direct';
+        let currentResult = null;
+
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Set decision mode
+        function setMode(mode) {
+            currentMode = mode;
+            
+            // Update tabs
+            document.querySelectorAll('.mode-tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(mode + 'Tab').classList.add('active');
+            
+            // Show/hide modes
+            document.querySelectorAll('.decision-mode').forEach(modeDiv => {
+                modeDiv.style.display = 'none';
+            });
+            document.getElementById(mode + 'Mode').style.display = 'block';
+            
+            // Hide result
+            document.getElementById('resultContainer').style.display = 'none';
+        }
+
+        // Select answer (direct mode)
+        function selectAnswer(answer) {
+            const question = document.getElementById('question').value.trim();
+            
+            currentResult = {
+                answer: answer,
+                question: question,
+                method: 'Direct Choice',
+                explanation: `You chose ${answer} based on your instinct and preference.`
+            };
+            
+            showResult();
+        }
+
+        // Get random answer
+        function getRandomAnswer() {
+            const button = document.getElementById('randomButton');
+            button.textContent = '🎲 THINKING...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                const answers = ['Yes', 'No'];
+                const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+                const question = document.getElementById('question').value.trim();
+                
+                currentResult = {
+                    answer: randomAnswer,
+                    question: question,
+                    method: 'Random Choice',
+                    explanation: `The universe has randomly chosen ${randomAnswer} for you.`
+                };
+                
+                showResult();
+                
+                button.textContent = '🎲 GET ANSWER';
+                button.disabled = false;
+            }, 1500);
+        }
+
+        // Analyze question
+        function analyzeQuestion() {
+            const question = document.getElementById('question').value.trim();
+            const button = document.getElementById('analyzeButton');
+            
+            if (!question) {
+                alert('Please enter a question first for analysis!');
+                return;
+            }
+            
+            button.textContent = '🧠 ANALYZING...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                // Simple analysis based on question characteristics
+                const positiveWords = ['should', 'can', 'will', 'good', 'right', 'best', 'love', 'happy', 'success'];
+                const negativeWords = ['shouldn\'t', 'can\'t', 'won\'t', 'bad', 'wrong', 'worst', 'hate', 'sad', 'fail'];
+                
+                const lowerQuestion = question.toLowerCase();
+                let score = 0;
+                
+                positiveWords.forEach(word => {
+                    if (lowerQuestion.includes(word)) score += 1;
+                });
+                
+                negativeWords.forEach(word => {
+                    if (lowerQuestion.includes(word)) score -= 1;
+                });
+                
+                // Add some randomness
+                score += (Math.random() - 0.5) * 2;
+                
+                const answer = score >= 0 ? 'Yes' : 'No';
+                
+                currentResult = {
+                    answer: answer,
+                    question: question,
+                    method: 'Question Analysis',
+                    explanation: `Based on the energy and tone of your question, the guidance points toward ${answer}.`
+                };
+                
+                showResult();
+                
+                button.textContent = '🧠 ANALYZE';
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Show result
+        function showResult() {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultText = document.getElementById('resultText');
+            const resultMessage = document.getElementById('resultMessage');
+            
+            resultText.textContent = currentResult.answer;
+            resultText.className = `result-text ${currentResult.answer === 'Yes' ? 'result-yes' : 'result-no'}`;
+            
+            let message = `Method: ${currentResult.method}<br>`;
+            if (currentResult.question) {
+                message += `Question: "${currentResult.question}"<br>`;
+            }
+            message += currentResult.explanation;
+            
+            resultMessage.innerHTML = message;
+            
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Reset decision
+        function resetDecision() {
+            document.getElementById('resultContainer').style.display = 'none';
+            currentResult = null;
+        }
+
+        // Share result
+        function shareResult() {
+            if (!currentResult) return;
+            
+            let shareText = `Decision Result: ${currentResult.answer}`;
+            
+            if (currentResult.question) {
+                shareText += `\nQuestion: "${currentResult.question}"`;
+            }
+            
+            shareText += `\nMethod: ${currentResult.method}`;
+            shareText += `\n\n${currentResult.explanation}`;
+            shareText += '\n\nTry YesNo.Pro for more decision-making tools!';
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Yes No Button - My Decision Result',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Result copied to clipboard!');
+                });
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.2s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const navMenu = document.getElementById('navMenu');
+                const navToggle = document.querySelector('.nav-toggle');
+                
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
 </body>
 </html>

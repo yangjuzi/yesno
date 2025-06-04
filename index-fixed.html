@@ -1,53 +1,31 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes No Oracle - Instant Decision Making Tool | Simple Yes or No Answers</title>
-    <meta name="description" content="Get instant yes or no answers to your life questions. YesNo Oracle provides clear, simple guidance for better decision making. Free online decision tool.">
-    <meta name="keywords" content="yes no oracle, decision making, yes or no answers, life choices, instant answers, decision tool, oracle guidance">
-    <meta name="author" content="YesNo.Pro">
-    <meta property="og:title" content="Yes No Oracle - Instant Decision Making Tool">
-    <meta property="og:description" content="Get instant yes or no answers to your life questions. Simple, clear guidance for better decisions.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yesno.pro/">
-    <meta property="og:image" content="https://yesno.pro/images/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yes No Oracle - Instant Decision Making Tool">
-    <meta name="twitter:description" content="Get instant yes or no answers to your life questions. Simple, clear guidance for better decisions.">
+    <title>Yes No Oracle - 简洁的决策助手</title>
+    <meta name="description" content="Yes No Oracle 为您的生活难题提供清晰简洁的答案。呼吸，放松，让我们帮您做决定。">
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/" />
     <link rel="stylesheet" href="./styles.css">
     <style>
-        /* Ensure page is immediately visible */
+        /* 临时修复样式 - 确保页面可见 */
         body {
             opacity: 1 !important;
+            transform: none !important;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: none !important;
         }
     </style>
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "YesNo Oracle",
-        "description": "Instant yes or no decision making tool for life questions",
-        "url": "https://yesno.pro",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        }
-    }
-    </script>
 </head>
 <body class="loaded">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="./" class="nav-brand">YesNo.Pro</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="./yes-no-oracle.html" class="nav-link active">Oracle</a></li>
                 <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
@@ -62,44 +40,42 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title fade-in">Yes No Oracle</h1>
-            <p class="hero-subtitle fade-in">When facing tough choices, let simple wisdom guide your way</p>
+            <h1 class="hero-title">Yes No Oracle</h1>
+            <p class="hero-subtitle">当面临选择时，让简洁的智慧为您指引方向</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="section">
         <div class="container">
-            <div class="card fade-in" style="max-width: 600px; margin: 0 auto;">
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
                 <div class="text-center mb-4">
-                    <h2>Take a Deep Breath and Relax</h2>
-                    <p>Think about your question in your mind, then click the button below</p>
+                    <h2>深呼吸，放松心情</h2>
+                    <p>在心中想着您的问题，然后点击下方按钮</p>
                 </div>
                 
                 <form id="oracleForm" class="form-group">
-                    <label for="question" class="form-label">Your Question</label>
+                    <label for="question" class="form-label">您的问题</label>
                     <textarea 
                         id="question" 
                         class="form-textarea" 
-                        placeholder="Enter your question here..."
+                        placeholder="请输入您想要咨询的问题..."
                         rows="4"
                         required
-                        aria-describedby="question-help"
                     ></textarea>
-                    <small id="question-help" class="form-text">Ask any yes/no question about your life, career, relationships, or decisions.</small>
                     
                     <button type="submit" class="btn btn-primary btn-large mt-3">
-                        🔮 Ask Oracle
+                        🔮 询问 Oracle
                     </button>
                 </form>
             </div>
 
             <!-- Result Display -->
-            <div id="resultContainer" class="result-card fade-in" style="display: none;">
+            <div id="resultContainer" class="result-card" style="display: none;">
                 <div class="result-question" id="displayQuestion"></div>
                 <div class="result-text" id="resultText"></div>
                 <button onclick="askAgain()" class="btn btn-secondary mt-3">
-                    Ask Again
+                    再次询问
                 </button>
             </div>
         </div>
@@ -109,33 +85,33 @@
     <section class="section" style="background: var(--secondary-bg);">
         <div class="container">
             <div class="text-center mb-4">
-                <h2>Choose Your Preferred Method</h2>
-                <p>Multiple tools to help you make the best decisions</p>
+                <h2>选择您喜欢的方式</h2>
+                <p>多种工具，帮您做出最佳决策</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="card">
-                    <h3>🎡 Decision Wheel</h3>
-                    <p>Let the wheel of fortune choose for you</p>
-                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Try Wheel</a>
+                    <h3>🎡 转盘决策</h3>
+                    <p>让命运之轮为您选择</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">体验转盘</a>
                 </div>
                 
                 <div class="card">
-                    <h3>🃏 Tarot Reading</h3>
-                    <p>Ancient wisdom meets modern choices</p>
-                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">Tarot Reading</a>
+                    <h3>🃏 塔罗占卜</h3>
+                    <p>古老的智慧与现代的选择</p>
+                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">塔罗占卜</a>
                 </div>
                 
                 <div class="card">
-                    <h3>🔘 Simple Button</h3>
-                    <p>The most direct yes or no choice</p>
-                    <a href="./yes-no-button.html" class="btn btn-secondary mt-2">Quick Decision</a>
+                    <h3>🔘 简单按钮</h3>
+                    <p>最直接的是非选择</p>
+                    <a href="./yes-no-button.html" class="btn btn-secondary mt-2">快速决策</a>
                 </div>
                 
                 <div class="card">
-                    <h3>⭐ Astrology Guide</h3>
-                    <p>Wisdom from the stars above</p>
-                    <a href="./yes-no-astrology.html" class="btn btn-secondary mt-2">Astrology Reading</a>
+                    <h3>⭐ 星座指引</h3>
+                    <p>星空下的智慧答案</p>
+                    <a href="./yes-no-astrology.html" class="btn btn-secondary mt-2">星座占卜</a>
                 </div>
             </div>
         </div>
@@ -146,19 +122,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">Features</a>
-                    <a href="#" class="footer-link">How to Use</a>
-                    <a href="#" class="footer-link">Support</a>
-                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">关于我们</a>
+                    <a href="#" class="footer-link">功能介绍</a>
+                    <a href="#" class="footer-link">使用方式</a>
+                    <a href="#" class="footer-link">用户支持</a>
+                    <a href="#" class="footer-link">帮助中心</a>
                 </div>
-                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+                <p class="footer-copy">© 2024 YesNo.Pro. 保留所有权利。</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Ensure page is immediately visible
+        // 确保页面立即可见
         document.body.classList.add('loaded');
         
         // Navigation toggle for mobile
@@ -176,7 +152,7 @@
         function askQuestion() {
             const question = document.getElementById('question').value.trim();
             if (!question) {
-                alert('Please enter your question');
+                alert('请输入您的问题');
                 return;
             }
 
@@ -201,26 +177,6 @@
             document.getElementById('resultContainer').style.display = 'none';
             document.getElementById('question').focus();
         }
-
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = '0.2s';
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with fade-in class
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
 
         // Close mobile nav when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -249,4 +205,4 @@
         gtag('config', 'G-NZY24GZMKZ');
     </script>
 </body>
-</html>
+</html> 

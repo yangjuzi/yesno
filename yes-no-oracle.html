@@ -1,148 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no oracle help you decide yes or no</title>
-    <meta name="description" content=" Yes No Oracle is here to provide you with clear and concise answers to life's pressing questions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes No Oracle - Divine Guidance | Free Oracle Reading</title>
+    <meta name="description" content="Seek divine wisdom through the ancient oracle. Ask your question and receive clear yes or no guidance from the universe. Free oracle reading online.">
+    <meta name="keywords" content="oracle reading, divine guidance, yes no oracle, spiritual guidance, oracle consultation, mystical answers, divination oracle">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Yes No Oracle - Divine Guidance">
+    <meta property="og:description" content="Seek divine wisdom through the ancient oracle. Get clear yes or no guidance from the universe.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/yes-no-oracle.html">
+    <meta property="og:image" content="https://yesno.pro/images/oracle-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="./favicon.svg" />
-    <link rel="canonical" href="https://yesno.pro" />
-    <header class="site-head bg-base nav">
-      <a href="./yes-no-oracle.html">Yes No Oracle</a>
-      <a href="./yes-no-wheel.html">Yes No Wheel</a>
-      <a href="./yes-no-tarot.html">Yes No Tarot</a>
-      <a href="./yes-no-button.html">Yes No Button</a>
-      <a href="./yes-no-astrology.html">Yes No Astrology</a>
-      <a href="./blog.html">Blog</a>
-    </header>
-    <center>
-      <title>Yes No Oracle</title>
-      <h1>Yes/No Oracle，welcome to visit simple free yesno.pro</h1>
-      <h2>Breathe in, and breathe out.</h2>
-      <h3>Now Please input your question,then click oracle</h3>
-    
-    
-    
-    
-    </center>
+    <link rel="canonical" href="https://yesno.pro/yes-no-oracle.html" />
+    <link rel="stylesheet" href="./styles.css">
     <style>
-     .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020d24; /* Dark background color for the nav */
-    padding: 1rem 0; /* Padding for some spacing */
-  }
-
-  .nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around the links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
-    color: #acacaf; /* Font color change on hover */
-  }
-
-  body {
-      background-color: black;
-      color: white;
-      /*font-family: American Typewriter, serif;
-      font-variant: small-caps;*/
-      text-align: center; /* Center align the content */
-    }
-     
-
-
-
-     
-    #result {
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 100px;
-            width: 60%;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 50px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+        /* Ensure page is immediately visible */
+        body {
+            opacity: 1 !important;
         }
-  </style>
-	<script src="js/tailwind.3.4.1.js"></script>
-</head>
-<body>
-	
-  
- 
-    
-
-  <!-- 在原有的基础上修改 -->
-<div class="w-3/5 mx-auto mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-  <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-      <label for="comment" class="sr-only">Your comment</label>
-      <textarea id="question" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
-  </div>
-  <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-      <button id="ask" onclick="askQuestion()" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-          oracle
-      </button>
-  </div>
-</div>
-
-<!-- 输出结果的div也应用相同的居中逻辑 -->
-<div id="result">
-</div>
-  
-<script>
-    function askQuestion() {
-        var question = document.getElementById('question').value;
-        var result = getAnswer(question);
-        // Set the background color based on the answer
-        var resultColor = result === "Yes" ? "#4CAF50" : "#F44336"; // Green for "Yes", red for "No"
-
-// Display the question and answer together
-
-var formattedResult = `"${question}" \n\n ${result}`;
-
-document.getElementById('result').textContent = formattedResult;
-document.getElementById('result').style.backgroundColor = resultColor;
-}
-
-
-    function getAnswer(question) {
-        var answers = ["Yes", "No"];
-        var randomIndex = Math.floor(Math.random() * answers.length);
-        return answers[randomIndex];
+        
+        .oracle-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .mystical-bg {
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mystical-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #eee, transparent),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 100px 50px;
+            animation: stars 15s linear infinite;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        
+        @keyframes stars {
+            from { transform: translateX(0px); }
+            to { transform: translateX(-100px); }
+        }
+        
+        .oracle-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .oracle-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: var(--radius-large);
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .oracle-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .oracle-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .oracle-button:hover::before {
+            left: 100%;
+        }
+        
+        .oracle-result {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #667eea;
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            backdrop-filter: blur(15px);
+        }
+        
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .oracle-wisdom {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-large);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .meditation-guide {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 1rem;
+            background: var(--accent-bg);
+            border-radius: var(--radius-medium);
+            border: 1px solid var(--border-color);
+        }
+        
+        .step-number {
+            background: var(--blue-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Yes No Oracle",
+        "description": "Divine oracle guidance for yes or no questions and life decisions",
+        "url": "https://yesno.pro/yes-no-oracle.html",
+        "applicationCategory": "UtilityApplication",
+        "keywords": "oracle, divine guidance, spiritual consultation, mystical answers"
     }
-</script>
+    </script>
+</head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./yes-no-oracle.html" class="nav-link active">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<footer class="bg-[#020d24] text-white">
-  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
-    <div class="flex flex-col items-center">
-      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
-      </div>
-      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
-      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<div style="display: none;">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-NZY24GZMKZ');
-  </script>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero mystical-bg">
+        <div class="container">
+            <h1 class="hero-title fade-in">🔮 Divine Oracle</h1>
+            <p class="hero-subtitle fade-in">Seek wisdom from the ancient source of knowledge</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Meditation Guide -->
+            <div class="meditation-guide fade-in">
+                <div class="text-center mb-4">
+                    <h2>Prepare for Your Oracle Reading</h2>
+                    <p>Follow these steps to receive clear guidance from the divine oracle</p>
+                </div>
+                
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>Center Yourself</h4>
+                        <p>Take three deep breaths and clear your mind of distractions</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>Focus Your Intent</h4>
+                        <p>Clearly formulate your yes/no question in your heart</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>Open to Guidance</h4>
+                        <p>Release attachment to outcomes and trust the wisdom received</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oracle Form -->
+            <div class="card fade-in oracle-container">
+                <div class="oracle-form mystical-bg">
+                    <div class="text-center mb-4">
+                        <h2 style="color: white;">Consult the Oracle</h2>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Enter your question and seek divine wisdom</p>
+                    </div>
+                    
+                    <form id="oracleForm" class="form-group">
+                        <label for="question" class="form-label" style="color: white;">Your Sacred Question</label>
+                        <textarea 
+                            id="question" 
+                            class="form-textarea" 
+                            placeholder="Ask your yes/no question with sincerity and openness..."
+                            rows="4"
+                            required
+                            style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3);"
+                        ></textarea>
+                        <small class="form-text" style="color: rgba(255, 255, 255, 0.7);">
+                            The oracle responds best to sincere, specific yes/no questions about your path forward.
+                        </small>
+                        
+                        <button type="submit" class="oracle-button mt-3">
+                            🔮 Seek Oracle Guidance
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Result Display -->
+            <div id="resultContainer" class="oracle-result fade-in mystical-bg" style="display: none;">
+                <div class="result-icon" id="resultIcon"></div>
+                <h2 id="oracleAnswer" style="color: white;"></h2>
+                <div class="result-question" id="displayQuestion" style="color: rgba(255, 255, 255, 0.8); font-style: italic; margin-bottom: 1rem;"></div>
+                <div class="oracle-wisdom">
+                    <h4 style="color: white;">Divine Wisdom</h4>
+                    <p id="oracleMessage" style="color: rgba(255, 255, 255, 0.9);"></p>
+                </div>
+                <div class="mt-3">
+                    <button onclick="newConsultation()" class="oracle-button" style="background: linear-gradient(135deg, #4CAF50, #45a049);">
+                        ✨ New Consultation
+                    </button>
+                    <button onclick="shareReading()" class="btn btn-secondary">
+                        📱 Share Wisdom
+                    </button>
+                </div>
+            </div>
+
+            <!-- Oracle Wisdom -->
+            <div class="card fade-in mt-4">
+                <div class="text-center">
+                    <h3>Understanding Oracle Guidance</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🌟</div>
+                            <h4>Divine Connection</h4>
+                            <p>The oracle connects you to universal wisdom beyond ordinary consciousness</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">💫</div>
+                            <h4>Clear Guidance</h4>
+                            <p>Receive direct yes/no answers along with deeper understanding</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                            <h4>Personal Empowerment</h4>
+                            <p>Use guidance as insight while maintaining your power of choice</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sacred Wisdom -->
+            <div class="card fade-in mt-4 mystical-bg">
+                <div class="text-center">
+                    <h3 style="color: white;">Sacred Oracle Wisdom</h3>
+                    <p class="mt-2" style="color: rgba(255, 255, 255, 0.9);">
+                        "The oracle speaks not to predict the future, but to illuminate the path of wisdom in the present moment."
+                    </p>
+                    <p class="mt-2" style="color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                        Trust the guidance received, but remember that you are the ultimate author of your destiny.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Explore Other Divine Methods</h2>
+                <p>Each path offers unique wisdom for your journey</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>🃏 Tarot Reading</h3>
+                    <p>Ancient cards reveal hidden truths</p>
+                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">Draw Cards</a>
+                </div>
+                
+                <div class="card">
+                    <h3>⭐ Astrology Guide</h3>
+                    <p>Cosmic wisdom from celestial movements</p>
+                    <a href="./yes-no-astrology.html" class="btn btn-secondary mt-2">Star Reading</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🎡 Fortune Wheel</h3>
+                    <p>Let the wheel of fate guide your choice</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Spin Wheel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">How to Use</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                </div>
+                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure page is immediately visible
+        document.body.classList.add('loaded');
+        
+        let currentReading = null;
+
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Oracle wisdom messages
+        const oracleWisdom = {
+            yes: [
+                "The universe aligns in your favor. The path forward is blessed with positive energy.",
+                "Divine forces support your decision. Trust in the wisdom of your heart and proceed.",
+                "The cosmic currents flow with your intention. This choice leads to growth and fulfillment.",
+                "The sacred signs point toward yes. Your spirit is ready for this next step.",
+                "Universal wisdom affirms your path. This decision resonates with your highest good."
+            ],
+            no: [
+                "The divine counsel suggests patience. This may not be the right moment for this path.",
+                "Sacred wisdom whispers of caution. Consider waiting for a more favorable time.",
+                "The cosmic flow indicates resistance. Perhaps a different approach would serve you better.",
+                "Universal guidance suggests reflection. Trust that better opportunities await.",
+                "The oracle sees challenges ahead on this path. Your wisdom lies in choosing differently."
+            ]
+        };
+
+        // Oracle form submission
+        document.getElementById('oracleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            consultOracle();
+        });
+
+        function consultOracle() {
+            const question = document.getElementById('question').value.trim();
+            if (!question) {
+                alert('Please enter your sacred question to consult the oracle');
+                return;
+            }
+
+            const button = document.querySelector('.oracle-button');
+            const originalText = button.textContent;
+            button.textContent = '🔮 Channeling Divine Wisdom...';
+            button.disabled = true;
+
+            // Simulate oracle consultation time
+            setTimeout(() => {
+                const isYes = Math.random() < 0.5;
+                const answer = isYes ? 'Yes' : 'No';
+                const wisdomArray = oracleWisdom[isYes ? 'yes' : 'no'];
+                const wisdom = wisdomArray[Math.floor(Math.random() * wisdomArray.length)];
+                
+                currentReading = {
+                    question: question,
+                    answer: answer,
+                    wisdom: wisdom,
+                    timestamp: new Date()
+                };
+                
+                showOracleResult();
+                
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 3000);
+        }
+
+        function showOracleResult() {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultIcon = document.getElementById('resultIcon');
+            const oracleAnswer = document.getElementById('oracleAnswer');
+            const displayQuestion = document.getElementById('displayQuestion');
+            const oracleMessage = document.getElementById('oracleMessage');
+            
+            // Set icon based on answer
+            resultIcon.textContent = currentReading.answer === 'Yes' ? '✨' : '🌙';
+            
+            oracleAnswer.textContent = `The Oracle Speaks: ${currentReading.answer}`;
+            displayQuestion.textContent = `"${currentReading.question}"`;
+            oracleMessage.textContent = currentReading.wisdom;
+            
+            // Add result styling
+            oracleAnswer.className = currentReading.answer === 'Yes' ? 'result-yes' : 'result-no';
+            
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function newConsultation() {
+            document.getElementById('question').value = '';
+            document.getElementById('resultContainer').style.display = 'none';
+            currentReading = null;
+            document.getElementById('question').focus();
+        }
+
+        function shareReading() {
+            if (!currentReading) return;
+            
+            const shareText = `Oracle Reading Result:\n\nQuestion: "${currentReading.question}"\nAnswer: ${currentReading.answer}\n\nDivine Wisdom: ${currentReading.wisdom}\n\nConsult the oracle at YesNo.Pro for your own divine guidance!`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Yes No Oracle - My Divine Reading',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Oracle wisdom copied to clipboard!');
+                });
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.2s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const navMenu = document.getElementById('navMenu');
+                const navToggle = document.querySelector('.nav-toggle');
+                
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
 </body>
 </html>

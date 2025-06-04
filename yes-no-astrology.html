@@ -1,167 +1,666 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yes no astrology</title>
-    <meta name="description" content="yes or no helps you decide">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes No Astrology - Zodiac Decision Guidance | Free Astrology Reading</title>
+    <meta name="description" content="Get cosmic guidance for your decisions through astrology. Choose your zodiac sign and receive personalized yes or no answers from the stars. Free astrology readings.">
+    <meta name="keywords" content="astrology reading, zodiac signs, cosmic guidance, yes no astrology, horoscope, zodiac decision, astrology oracle, star guidance">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Yes No Astrology - Zodiac Decision Guidance">
+    <meta property="og:description" content="Get cosmic guidance for your decisions through astrology. Personalized yes or no answers from the stars.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/yes-no-astrology.html">
+    <meta property="og:image" content="https://yesno.pro/images/astrology-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="./favicon.svg" />
     <link rel="canonical" href="https://yesno.pro/yes-no-astrology.html" />
-    <header class="site-head bg-base nav">
-      <a href="./yes-no-oracle.html">Yes No Oracle</a>
-      <a href="./yes-no-wheel.html">Yes No Wheel</a>
-      <a href="./yes-no-tarot.html">Yes No Tarot</a>
-      <a href="./yes-no-button.html">Yes No Button</a>
-      <a href="./yes-no-astrology.html">Yes No Astrology</a>
-      <a href="./blog.html">Blog</a>
-    </header>
-     
+    <link rel="stylesheet" href="./styles.css">
     <style>
-     .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020d24; /* Dark background color for the nav */
-    padding: 1rem 0; /* Padding for some spacing */
-  }
-
-  .nav a {
-    color: white; /* Default font color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around the links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
-    color: #acacaf; /* Font color change on hover */
-  }
-
-  body {
-      background-color: black;
-      color: white;
-      /*font-family: American Typewriter, serif;
-      font-variant: small-caps;*/
-      text-align: center; /* Center align the content */
-    }
-      
-     
-    
-        #body-main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            
-            margin: 0px;
-			min-height:100vh;
+        /* Ensure page is immediately visible */
+        body {
+            opacity: 1 !important;
         }
-        #result {
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 100px;
-            font-weight: bold;
+        
+        .cosmic-bg {
+            background: linear-gradient(135deg, #0f0c29, #24243e, #302b63);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cosmic-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: stars 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes stars {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-100px); }
+        }
+        
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .zodiac-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-large);
+            padding: 1.5rem 1rem;
             text-align: center;
-            border-radius: 50px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        #yesNoButton {
-            padding: 10px 20px;
-            font-size: 50px;
             cursor: pointer;
-			background-color:#5340ff;
-            margin-bottom: 20px; /* 按钮和结果之间的间距 */
-            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
         }
-        .yes {
-            background-color: #4CAF50;
+        
+        .zodiac-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .zodiac-card.selected {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .zodiac-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .zodiac-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
             color: white;
         }
-        .no {
-            background-color: #F44336;
-            color: white;
+        
+        .zodiac-dates {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
         }
-        .yes.no {
-          color: currentColor;
-          background-image: linear-gradient(to right, #4CAF50 0%, #F44336 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+        
+        .cosmic-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: var(--radius-large);
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cosmic-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .cosmic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cosmic-button:hover::before {
+            left: 100%;
+        }
+        
+        .astrology-result {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            backdrop-filter: blur(15px);
+        }
+        
+        .result-constellation {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cosmic-wisdom {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-large);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #ffd700;
+        }
+        
+        @media (max-width: 768px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .zodiac-card {
+                padding: 1rem 0.5rem;
+            }
+            
+            .zodiac-icon {
+                font-size: 2rem;
+            }
+            
+            .zodiac-name {
+                font-size: 0.9rem;
+            }
+            
+            .zodiac-dates {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cosmic-button {
+                width: 100%;
+                margin-top: 1rem;
+            }
         }
     </style>
-	 
-   <script src="js/tailwind.3.4.1.js"></script>
-    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Yes No Astrology",
+        "description": "Get cosmic guidance for your decisions through zodiac astrology",
+        "url": "https://yesno.pro/yes-no-astrology.html",
+        "applicationCategory": "UtilityApplication",
+        "keywords": "astrology, zodiac, horoscope, cosmic guidance, yes no"
+    }
+    </script>
 </head>
-<body>
-	
- 
-  <div id="body-main" class="mainbutton">
-  <div id="result" class="yes no">YES or NO</div>
-<button id="yesNoButton">Click Me!</button>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./yes-no-oracle.html" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link active">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<script>
-    var countdownTimer;
-    var countdown = 3;
+    <!-- Hero Section -->
+    <section class="hero cosmic-bg">
+        <div class="container">
+            <h1 class="hero-title fade-in">⭐ Astrology Guidance</h1>
+            <p class="hero-subtitle fade-in">Let cosmic wisdom guide your life decisions</p>
+        </div>
+    </section>
 
-    function showResult(result) {
-        clearInterval(countdownTimer);
-        document.getElementById('result').className = '';
-        document.getElementById('result').textContent = result;
-        document.getElementById('result').classList.add(result === 'Yes' ? 'yes' : 'no');
-    }
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Instructions -->
+            <div class="card fade-in text-center mb-4">
+                <h2>Three Steps to Cosmic Guidance</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🌟</div>
+                        <h3>1. Choose Your Sign</h3>
+                        <p>Select your zodiac sign or the one you feel most connected to</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">💫</div>
+                        <h3>2. Focus Your Question</h3>
+                        <p>Concentrate on the question you want cosmic guidance for</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🌌</div>
+                        <h3>3. Receive Guidance</h3>
+                        <p>Get wisdom from the universe for your decision</p>
+                    </div>
+                </div>
+            </div>
 
-    function countdownEffect() {
-        var timerCount = countdown;
-        countdownTimer = setInterval(function() {
-            document.getElementById('result').textContent = 'YES or NO... ' + timerCount + 's';
-            timerCount--;
-            if (timerCount < 0) {
-                clearInterval(countdownTimer);
+            <!-- Question Input -->
+            <div class="card fade-in mb-4" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div class="text-center mb-4">
+                    <h2>Your Question for the Stars</h2>
+                    <p>Enter your question first to help the cosmic energy align better</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question" class="form-label">Your Question</label>
+                    <textarea 
+                        id="question" 
+                        class="form-textarea" 
+                        placeholder="e.g., Should I accept this new job opportunity?"
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Zodiac Selection -->
+            <div class="card fade-in cosmic-bg">
+                <div class="text-center mb-4">
+                    <h2 style="color: white;">Choose Your Zodiac Sign</h2>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Each sign carries unique cosmic energy and wisdom</p>
+                </div>
+                
+                <div class="zodiac-grid" id="zodiacGrid">
+                    <!-- Zodiac cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button id="consultStars" class="cosmic-button" onclick="consultStars()" disabled>
+                        🌟 Consult the Stars
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Display -->
+            <div id="resultContainer" class="astrology-result fade-in" style="display: none;">
+                <div class="result-constellation" id="resultConstellation"></div>
+                <h2 id="selectedZodiac"></h2>
+                <div class="result-text" id="resultText"></div>
+                <div class="cosmic-wisdom">
+                    <h4>Cosmic Wisdom</h4>
+                    <p id="zodiacWisdom"></p>
+                </div>
+                <div class="mt-3">
+                    <button onclick="newReading()" class="cosmic-button">
+                        🔮 New Reading
+                    </button>
+                    <button onclick="shareResult()" class="btn btn-secondary">
+                        📱 Share Result
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cosmic Wisdom Section -->
+            <div class="card fade-in mt-4 cosmic-bg">
+                <div class="text-center">
+                    <h3 style="color: white;">Universal Wisdom</h3>
+                    <p class="mt-2" style="color: rgba(255, 255, 255, 0.9);">
+                        "Astrology is not about determining our fate, but understanding our inner potential and cosmic influences."
+                    </p>
+                    <p class="mt-2" style="color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                        The universe provides guidance, but the power of choice remains in your hands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Explore More Mystical Tools</h2>
+                <p>Each method connects to different energy dimensions</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>🔮 Oracle Reading</h3>
+                    <p>Direct cosmic wisdom transmission</p>
+                    <a href="./yes-no-oracle.html" class="btn btn-secondary mt-2">Try Oracle</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🃏 Tarot Guidance</h3>
+                    <p>Ancient symbols of mystical power</p>
+                    <a href="./yes-no-tarot.html" class="btn btn-secondary mt-2">Tarot Reading</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🎡 Fortune Wheel</h3>
+                    <p>Inevitable patterns in randomness</p>
+                    <a href="./yes-no-wheel.html" class="btn btn-secondary mt-2">Spin Wheel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">How to Use</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                </div>
+                <p class="footer-copy">© 2024 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure page is immediately visible
+        document.body.classList.add('loaded');
+        
+        let selectedZodiac = null;
+        let currentResult = null;
+
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Zodiac data
+        const zodiacData = [
+            { name: "Aries", icon: "♈", dates: "Mar 21 - Apr 19", element: "Fire", 
+              traits: ["Brave", "Passionate", "Active"], 
+              constellation: "🐏" },
+            { name: "Taurus", icon: "♉", dates: "Apr 20 - May 20", element: "Earth", 
+              traits: ["Stable", "Patient", "Practical"], 
+              constellation: "🐂" },
+            { name: "Gemini", icon: "♊", dates: "May 21 - Jun 21", element: "Air", 
+              traits: ["Smart", "Curious", "Flexible"], 
+              constellation: "👥" },
+            { name: "Cancer", icon: "♋", dates: "Jun 22 - Jul 22", element: "Water", 
+              traits: ["Gentle", "Intuitive", "Protective"], 
+              constellation: "🦀" },
+            { name: "Leo", icon: "♌", dates: "Jul 23 - Aug 22", element: "Fire", 
+              traits: ["Confident", "Generous", "Leader"], 
+              constellation: "🦁" },
+            { name: "Virgo", icon: "♍", dates: "Aug 23 - Sep 22", element: "Earth", 
+              traits: ["Perfect", "Analytical", "Service"], 
+              constellation: "👩" },
+            { name: "Libra", icon: "♎", dates: "Sep 23 - Oct 23", element: "Air", 
+              traits: ["Balanced", "Harmonious", "Aesthetic"], 
+              constellation: "⚖️" },
+            { name: "Scorpio", icon: "♏", dates: "Oct 24 - Nov 21", element: "Water", 
+              traits: ["Deep", "Mysterious", "Transformative"], 
+              constellation: "🦂" },
+            { name: "Sagittarius", icon: "♐", dates: "Nov 22 - Dec 21", element: "Fire", 
+              traits: ["Free", "Exploring", "Philosophical"], 
+              constellation: "🏹" },
+            { name: "Capricorn", icon: "♑", dates: "Dec 22 - Jan 19", element: "Earth", 
+              traits: ["Grounded", "Responsible", "Ambitious"], 
+              constellation: "🐐" },
+            { name: "Aquarius", icon: "♒", dates: "Jan 20 - Feb 18", element: "Air", 
+              traits: ["Innovative", "Independent", "Humanitarian"], 
+              constellation: "🏺" },
+            { name: "Pisces", icon: "♓", dates: "Feb 19 - Mar 20", element: "Water", 
+              traits: ["Dreamy", "Compassionate", "Artistic"], 
+              constellation: "🐟" }
+        ];
+
+        const zodiacWisdom = {
+            "Aries": {
+                yes: "Aries' fiery energy supports your bold move forward - now is the time for action!",
+                no: "Aries reminds you that sometimes impulse needs restraint - think it through a bit more.",
+                wisdom: "Mars, Aries' ruling planet, grants you courage, but wisdom lies in knowing when to charge and when to wait."
+            },
+            "Taurus": {
+                yes: "Taurus' stable energy indicates this is a reliable choice - persistence will bring rewards.",
+                no: "Taurus suggests maintaining the status quo - change isn't always the best option.",
+                wisdom: "Taurus teaches us that true wealth comes not from rushing, but from steady accumulation."
+            },
+            "Gemini": {
+                yes: "Gemini's versatile energy encourages you to try new possibilities - keep an open mind.",
+                no: "Gemini reminds you that too many choices can scatter focus - concentrate on the present.",
+                wisdom: "Gemini's wisdom lies in communication and adaptation - sometimes answers come through dialogue."
+            },
+            "Cancer": {
+                yes: "Cancer's intuitive energy supports this decision - trust your deepest feelings.",
+                no: "Cancer suggests listening to your inner voice - if it doesn't feel right, don't force it.",
+                wisdom: "Cancer's lunar energy reminds us that emotional wisdom is often more accurate than rational analysis."
+            },
+            "Leo": {
+                yes: "Leo's regal energy encourages you to confidently take this step - you deserve better.",
+                no: "Leo reminds you that true royalty knows when to say no - protecting your dignity is important.",
+                wisdom: "Leo's solar energy tells us that true radiance comes from inner confidence, not external validation."
+            },
+            "Virgo": {
+                yes: "Virgo's precise energy shows you've prepared well - you can now act with confidence.",
+                no: "Virgo suggests checking the details once more - perfectionism can sometimes prevent mistakes.",
+                wisdom: "Virgo's Mercury energy reminds us that the devil is in the details, but don't be paralyzed by perfectionism."
+            },
+            "Libra": {
+                yes: "Libra's balanced energy supports this choice - it will bring harmony to your life.",
+                no: "Libra suggests weighing pros and cons - now might not be the optimal time.",
+                wisdom: "Libra's Venus energy teaches us that beautiful relationships are built on equality and respect."
+            },
+            "Scorpio": {
+                yes: "Scorpio's profound energy supports this transformation - courageously embrace inner change.",
+                no: "Scorpio reminds you that some secrets need time to reveal - now isn't the time yet.",
+                wisdom: "Scorpio's Pluto energy tells us that true power comes from facing shadows and transforming them."
+            },
+            "Sagittarius": {
+                yes: "Sagittarius' free energy encourages you to pursue broader horizons - go explore the unknown!",
+                no: "Sagittarius suggests considering if you really need to do this - sometimes freedom means choosing not to act.",
+                wisdom: "Sagittarius' Jupiter energy reminds us that wisdom comes from experience, not just knowledge."
+            },
+            "Capricorn": {
+                yes: "Capricorn's solid energy supports this practical decision - move forward step by step.",
+                no: "Capricorn suggests making a more thorough plan - success requires time and patience.",
+                wisdom: "Capricorn's Saturn energy teaches us that true achievement comes from sustained effort and responsibility."
+            },
+            "Aquarius": {
+                yes: "Aquarius' innovative energy supports breaking conventions - this may bring unexpected benefits.",
+                no: "Aquarius reminds you that independent thinking is important - don't be swayed by popular opinion.",
+                wisdom: "Aquarius' Uranus energy tells us that true freedom comes from liberation of thought."
+            },
+            "Pisces": {
+                yes: "Pisces' dreamy energy supports following your heart's guidance - intuition won't deceive you.",
+                no: "Pisces suggests awakening from dreams - facing reality might be more important.",
+                wisdom: "Pisces' Neptune energy reminds us that compassion and understanding are bridges connecting souls."
             }
-        }, 1000);
+        };
 
-        // 显示最终结果
-        setTimeout(function() {
-          var randomResult = Math.random() > 0.5 ? 'Yes' : 'No';
-          showResult(randomResult);
-        }, countdown * 1000);
-    }
+        // Initialize zodiac grid
+        function initZodiacGrid() {
+            const zodiacGrid = document.getElementById('zodiacGrid');
+            zodiacGrid.innerHTML = '';
 
-    document.getElementById('yesNoButton').addEventListener('click', function() {
-        document.getElementById('result').textContent = 'YES or NO... ' + countdown + 's';
-        countdownEffect();
-    });
-</script>
+            zodiacData.forEach((zodiac, index) => {
+                const zodiacCard = document.createElement('div');
+                zodiacCard.className = 'zodiac-card';
+                zodiacCard.onclick = () => selectZodiac(index);
+                
+                zodiacCard.innerHTML = `
+                    <div class="zodiac-icon">${zodiac.icon}</div>
+                    <div class="zodiac-name">${zodiac.name}</div>
+                    <div class="zodiac-dates">${zodiac.dates}</div>
+                `;
+                
+                zodiacGrid.appendChild(zodiacCard);
+            });
+        }
 
-</div>
+        // Select zodiac
+        function selectZodiac(index) {
+            // Remove previous selection
+            document.querySelectorAll('.zodiac-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selection to clicked card
+            event.target.closest('.zodiac-card').classList.add('selected');
+            
+            selectedZodiac = zodiacData[index];
+            document.getElementById('consultStars').disabled = false;
+        }
 
-<footer class="bg-[#020d24] text-white">
-  <div class="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-12 lg:py-16">
-    <div class="flex flex-col items-center">
-      <div class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1">
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">About</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Features</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Works</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Support</a>
-        <a href="#" class="px-6 py-2 font-normal transition hover:text-[#acacaf]">Help</a>
-      </div>
-      <div class="mb-4 mt-4 w-48 border-b border-solid border-b-white"></div>
-      <p class="text-sm text-white">© Copyright 2024. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<div style="display: none;">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-NZY24GZMKZ');
-  </script>
-  </div>
+        // Consult stars
+        function consultStars() {
+            if (!selectedZodiac) {
+                alert('Please select a zodiac sign first');
+                return;
+            }
+
+            const button = document.getElementById('consultStars');
+            button.textContent = '🌟 Reading the Stars...';
+            button.disabled = true;
+
+            setTimeout(() => {
+                const isYes = Math.random() < 0.5;
+                const result = isYes ? 'Yes' : 'No';
+                const wisdom = zodiacWisdom[selectedZodiac.name];
+                const explanation = wisdom[isYes ? 'yes' : 'no'];
+                
+                currentResult = {
+                    zodiac: selectedZodiac.name,
+                    result: result,
+                    explanation: explanation,
+                    wisdom: wisdom.wisdom,
+                    constellation: selectedZodiac.constellation
+                };
+                
+                showResult();
+                
+                button.textContent = '🌟 Consult the Stars';
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Show result
+        function showResult() {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultConstellation = document.getElementById('resultConstellation');
+            const selectedZodiacElement = document.getElementById('selectedZodiac');
+            const resultText = document.getElementById('resultText');
+            const zodiacWisdomElement = document.getElementById('zodiacWisdom');
+            
+            resultConstellation.textContent = currentResult.constellation;
+            selectedZodiacElement.textContent = `${currentResult.zodiac} - ${currentResult.result}`;
+            resultText.textContent = currentResult.explanation;
+            resultText.className = `result-text ${currentResult.result === 'Yes' ? 'result-yes' : 'result-no'}`;
+            zodiacWisdomElement.textContent = currentResult.wisdom;
+            
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // New reading
+        function newReading() {
+            document.getElementById('question').value = '';
+            document.getElementById('resultContainer').style.display = 'none';
+            selectedZodiac = null;
+            currentResult = null;
+            document.getElementById('consultStars').disabled = true;
+            
+            // Clear zodiac selection
+            document.querySelectorAll('.zodiac-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
+
+        // Share result
+        function shareResult() {
+            if (!currentResult) return;
+            
+            const question = document.getElementById('question').value.trim();
+            let shareText = `I consulted astrology for ${currentResult.zodiac} guidance. `;
+            
+            if (question) {
+                shareText += `My question was: "${question}". `;
+            }
+            
+            shareText += `The answer is: ${currentResult.result}\n\n${currentResult.explanation}\n\nCosmic Wisdom: ${currentResult.wisdom}\n\nTry YesNo.Pro for more mystical guidance!`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Yes No Astrology - My Cosmic Reading',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Result copied to clipboard!');
+                });
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initZodiacGrid();
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.2s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const navMenu = document.getElementById('navMenu');
+                const navToggle = document.querySelector('.nav-toggle');
+                
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
 </body>
 </html>

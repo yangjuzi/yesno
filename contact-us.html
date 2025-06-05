@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - YesNo.Pro | Get in Touch with Our Team</title>
+    <meta name="description" content="Contact YesNo.Pro for support, feedback, or questions about our mystical decision making platform. We're here to help guide your journey.">
+    <meta name="keywords" content="contact yesno.pro, customer support, spiritual guidance help, oracle platform support">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Contact Us - YesNo.Pro">
+    <meta property="og:description" content="Get in touch with YesNo.Pro for support and guidance on your mystical journey.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/contact-us.html">
+    <meta property="og:image" content="https://yesno.pro/images/contact-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link rel="canonical" href="https://yesno.pro/contact-us.html" />
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            opacity: 1 !important;
+        }
+        
+        .contact-header {
+            background: linear-gradient(135deg, #0a0a0f, #1a1a2e, #2d1b69);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #8b5cf6, transparent),
+                radial-gradient(1px 1px at 40px 70px, #f59e0b, transparent),
+                radial-gradient(1px 1px at 90px 40px, #a78bfa, transparent);
+            background-repeat: repeat;
+            background-size: 200px 120px;
+            animation: twinkle 25s linear infinite;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-form {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 2px solid var(--purple-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, rgba(139, 92, 246, 0.1), transparent, rgba(139, 92, 246, 0.1));
+            animation: rotate 40s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-secondary));
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-medium);
+            background: var(--bg);
+            color: var(--primary-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--purple-primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-method:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .faq-section {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            margin: 1rem 0;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-text);
+        }
+        
+        .faq-question:hover {
+            background: var(--accent-bg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--secondary-text);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .response-time {
+            background: var(--accent-bg);
+            border-radius: var(--radius-large);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-header {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="contact-header">
+        <div class="container">
+            <h1 class="fade-in" style="position: relative; z-index: 1;">📞 Contact Us</h1>
+            <p class="fade-in" style="font-size: 1.2rem; position: relative; z-index: 1; margin-top: 1rem;">
+                We're here to guide and support you on your mystical journey
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Contact Grid -->
+            <div class="contact-grid fade-in">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="color: var(--primary-text); margin-bottom: 1.5rem; position: relative; z-index: 1;">Send Us a Message</h2>
+                    <form id="contactForm" style="position: relative; z-index: 1;">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="spiritual">Spiritual Guidance Questions</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="media">Media & Press</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="Please share your thoughts, questions, or concerns with us..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            🌟 Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 style="color: white; margin-bottom: 2rem;">Get in Touch</h2>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Email Support</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">support@yesno.pro</p>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">For general inquiries and support</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🎯</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Spiritual Guidance</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">guidance@yesno.pro</p>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Questions about our divination tools</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🤝</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Partnerships</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">partnerships@yesno.pro</p>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Collaboration opportunities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📰</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Media & Press</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">press@yesno.pro</p>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Media inquiries and interviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="response-time fade-in">
+                <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">⏰ Response Times</h3>
+                <p style="color: var(--secondary-text);">
+                    We typically respond to all inquiries within 24-48 hours. For urgent support matters, 
+                    please mark your subject as "URGENT" and we'll prioritize your message. Our spiritual guidance 
+                    team reviews questions on weekdays and provides thoughtful responses.
+                </p>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section fade-in">
+                <h2 style="color: var(--primary-text); text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How accurate are the readings on YesNo.Pro?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our divination tools are designed as guidance instruments, not fortune-telling devices. The accuracy depends on your openness to the wisdom offered and how you apply it to your situation. We encourage using our tools as a starting point for reflection and personal insight.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is my personal information and questions kept private?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We take privacy very seriously. Your questions, readings, and personal information are kept completely confidential. We do not store your questions or share any personal data with third parties. Please see our Privacy Policy for complete details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can I get personalized readings or consultations?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, YesNo.Pro offers automated guidance tools. However, we're working on introducing personalized consultation services. Contact us at guidance@yesno.pro to express your interest and we'll notify you when these services become available.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How often can I use the divination tools?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can use our tools as often as you like. However, for the best experience, we recommend reflecting on each reading before seeking another. Sometimes the universe needs time to reveal its wisdom, and too many consecutive readings might cloud the message.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Do you offer mobile apps?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, YesNo.Pro is available as a responsive web application that works beautifully on all devices. We're considering developing dedicated mobile apps in the future. Follow our blog or contact us to stay updated on new developments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community -->
+            <div class="card fade-in text-center" style="background: linear-gradient(135deg, var(--purple-primary), var(--purple-secondary)); color: white;">
+                <h2 style="color: white; margin-bottom: 1rem;">Join Our Community</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem;">
+                    Connect with fellow seekers and stay updated on new features, wisdom insights, and community events.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-white">Newsletter</a>
+                    <a href="./blog.html" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">Blog</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./about-us.html" class="footer-link">About Us</a>
+                    <a href="./contact-us.html" class="footer-link">Contact Us</a>
+                    <a href="./terms-of-service.html" class="footer-link">Terms of Service</a>
+                    <a href="./privacy-policy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <p class="footer-copy">© 2025 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.body.classList.add('loaded');
+        
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function toggleFAQ(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-question span:last-child').textContent = '+';
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                element.classList.add('active');
+                element.querySelector('.faq-question span:last-child').textContent = '−';
+            }
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = '🌟 Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your message! We\'ll get back to you within 24-48 hours.');
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
+</body>
+</html> 

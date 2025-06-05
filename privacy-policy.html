@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - YesNo.Pro | Data Protection & Privacy</title>
+    <meta name="description" content="Read YesNo.Pro's Privacy Policy. Learn how we protect your personal information and maintain privacy in our mystical decision making platform.">
+    <meta name="keywords" content="privacy policy, data protection, yesno.pro privacy, personal information, spiritual guidance privacy">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="Privacy Policy - YesNo.Pro">
+    <meta property="og:description" content="YesNo.Pro Privacy Policy and data protection practices for our mystical decision making platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/privacy-policy.html">
+    <meta property="og:image" content="https://yesno.pro/images/privacy-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link rel="canonical" href="https://yesno.pro/privacy-policy.html" />
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            opacity: 1 !important;
+        }
+        
+        .privacy-header {
+            background: linear-gradient(135deg, #0f1419, #1a1a2e, #2d1b69);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(3px 3px at 20px 30px, #4f46e5, transparent),
+                radial-gradient(2px 2px at 40px 70px, #7c3aed, transparent),
+                radial-gradient(1px 1px at 90px 40px, #8b5cf6, transparent),
+                radial-gradient(2px 2px at 130px 80px, #f59e0b, transparent);
+            background-repeat: repeat;
+            background-size: 160px 100px;
+            animation: privacyShield 35s linear infinite;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        @keyframes privacyShield {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(90deg); }
+            50% { transform: scale(1) rotate(180deg); }
+            75% { transform: scale(0.9) rotate(270deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+        
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .privacy-section {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--purple-primary);
+            position: relative;
+        }
+        
+        .section-title {
+            color: var(--purple-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-content {
+            color: var(--secondary-text);
+            line-height: 1.7;
+        }
+        
+        .section-content h4 {
+            color: var(--primary-text);
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .section-content ul, .section-content ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .section-content li {
+            margin: 0.5rem 0;
+        }
+        
+        .privacy-highlight {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(245, 158, 11, 0.1));
+            border: 1px solid var(--purple-primary);
+            border-radius: var(--radius-medium);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .privacy-highlight::before {
+            content: '🔒';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--card-bg);
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .quick-summary {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--gold-primary);
+        }
+        
+        .contact-privacy {
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-secondary));
+            color: white;
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .data-table {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .data-table th {
+            background: var(--purple-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--secondary-text);
+        }
+        
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .right-card {
+            background: var(--accent-bg);
+            border-radius: var(--radius-medium);
+            padding: 1.5rem;
+            border-left: 3px solid var(--gold-primary);
+        }
+        
+        .right-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-header {
+                padding: 2rem 0;
+            }
+            
+            .privacy-content {
+                padding: 1rem;
+            }
+            
+            .privacy-section {
+                padding: 1.5rem;
+            }
+            
+            .data-table {
+                overflow-x: auto;
+            }
+            
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="privacy-header">
+        <div class="container">
+            <h1 class="fade-in" style="position: relative; z-index: 1;">🔒 Privacy Policy</h1>
+            <p class="fade-in" style="font-size: 1.2rem; position: relative; z-index: 1; margin-top: 1rem;">
+                Your privacy and data protection are our sacred responsibility
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div class="privacy-content">
+                <!-- Quick Summary -->
+                <div class="quick-summary fade-in">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">🛡️ Privacy Protection Summary</h3>
+                    <p style="color: var(--primary-text); font-weight: 600; margin-bottom: 1rem;">Your privacy is fundamental to our mission:</p>
+                    <ul style="color: var(--secondary-text); margin: 0; padding-left: 1.5rem;">
+                        <li>We <strong>do not store</strong> your questions or reading results</li>
+                        <li>We <strong>do not track</strong> your personal divination sessions</li>
+                        <li>We <strong>do not sell</strong> your data to third parties</li>
+                        <li>We use <strong>minimal analytics</strong> only to improve our service</li>
+                        <li>You have <strong>full control</strong> over your data and privacy</li>
+                    </ul>
+                    <p style="color: var(--accent-text); font-style: italic; margin-top: 1rem;">
+                        <strong>Last Updated:</strong> January 1, 2025
+                    </p>
+                </div>
+
+                <!-- 1. Introduction -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        📋 1. Introduction
+                    </h2>
+                    <div class="section-content">
+                        <p>
+                            Welcome to YesNo.Pro's Privacy Policy. This document explains how we collect, use, store, and protect your personal information when you use our mystical decision-making platform. We are committed to maintaining the highest standards of privacy protection while providing you with meaningful spiritual guidance.
+                        </p>
+                        <div class="privacy-highlight">
+                            <strong>Core Principle:</strong> We believe that seeking spiritual guidance should be a completely private and personal experience. Your questions, concerns, and the wisdom you receive are yours alone.
+                        </div>
+                        <p>
+                            By using YesNo.Pro, you consent to the data practices described in this Privacy Policy. If you do not agree with our practices, please do not use our services.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Information We Collect -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        📊 2. Information We Collect
+                    </h2>
+                    <div class="section-content">
+                        <h4>Information We DO NOT Collect</h4>
+                        <div class="privacy-highlight">
+                            <strong>Your Questions and Readings:</strong> We do not store, log, or retain any of your questions, divination results, or reading sessions. All interactions with our tools are processed in real-time and immediately discarded.
+                        </div>
+                        
+                        <h4>Information We DO Collect</h4>
+                        <div class="data-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Data Type</th>
+                                        <th>Purpose</th>
+                                        <th>Retention</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Basic Analytics</td>
+                                        <td>Page views, general usage patterns</td>
+                                        <td>26 months (Google Analytics)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Technical Information</td>
+                                        <td>Browser type, device info for compatibility</td>
+                                        <td>Session-based only</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact Information</td>
+                                        <td>Only when you voluntarily contact us</td>
+                                        <td>Until resolved + 2 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Newsletter Email</td>
+                                        <td>Only if you subscribe voluntarily</td>
+                                        <td>Until you unsubscribe</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h4>Automatically Collected Information</h4>
+                        <ul>
+                            <li><strong>Usage Analytics:</strong> Page visits, time spent, general navigation patterns (anonymized)</li>
+                            <li><strong>Technical Data:</strong> Browser type, operating system, screen resolution (for optimization)</li>
+                            <li><strong>IP Address:</strong> Temporarily for security and geographic analytics (not linked to personal identity)</li>
+                        </ul>
+                        
+                        <h4>Voluntarily Provided Information</h4>
+                        <ul>
+                            <li><strong>Contact Forms:</strong> Name, email, message when you contact us</li>
+                            <li><strong>Newsletter:</strong> Email address if you subscribe</li>
+                            <li><strong>Feedback:</strong> Any feedback or suggestions you share</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. How We Use Your Information -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🎯 3. How We Use Your Information
+                    </h2>
+                    <div class="section-content">
+                        <h4>Service Operation</h4>
+                        <ul>
+                            <li>Providing and maintaining our divination tools</li>
+                            <li>Ensuring website security and preventing abuse</li>
+                            <li>Optimizing performance across different devices and browsers</li>
+                        </ul>
+                        
+                        <h4>Service Improvement</h4>
+                        <ul>
+                            <li>Understanding which tools are most helpful to users</li>
+                            <li>Identifying technical issues and areas for improvement</li>
+                            <li>Developing new features based on usage patterns</li>
+                        </ul>
+                        
+                        <h4>Communication</h4>
+                        <ul>
+                            <li>Responding to your support requests and inquiries</li>
+                            <li>Sending newsletters (only if you subscribe)</li>
+                            <li>Providing important service updates when necessary</li>
+                        </ul>
+                        
+                        <div class="privacy-highlight">
+                            <strong>What We Never Do:</strong> We never analyze the content of your questions, track your spiritual journey, or create profiles based on your divination preferences.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Data Sharing and Disclosure -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🤝 4. Data Sharing and Disclosure
+                    </h2>
+                    <div class="section-content">
+                        <h4>Third-Party Services</h4>
+                        <p>We use the following third-party services that may collect limited data:</p>
+                        <ul>
+                            <li><strong>Google Analytics:</strong> Anonymized usage statistics to improve our service</li>
+                            <li><strong>Web Hosting Provider:</strong> Technical logs for security and performance</li>
+                            <li><strong>Email Service:</strong> Only for newsletter delivery (if subscribed)</li>
+                        </ul>
+                        
+                        <h4>We Never Share</h4>
+                        <div class="privacy-highlight">
+                            <strong>Absolute Promise:</strong> We never sell, rent, or trade your personal information to any third party for marketing or commercial purposes.
+                        </div>
+                        
+                        <h4>Legal Disclosure</h4>
+                        <p>We may disclose information only when required by law or to:</p>
+                        <ul>
+                            <li>Comply with legal obligations or court orders</li>
+                            <li>Protect the safety and security of our users</li>
+                            <li>Prevent fraud or illegal activities</li>
+                            <li>Protect our legal rights and property</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. Your Privacy Rights -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        ⚖️ 5. Your Privacy Rights
+                    </h2>
+                    <div class="section-content">
+                        <p>You have comprehensive rights regarding your personal data:</p>
+                        
+                        <div class="rights-grid">
+                            <div class="right-card">
+                                <span class="right-icon">👁️</span>
+                                <h4 style="color: var(--purple-primary);">Right to Know</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Request information about what data we collect and how it's used.
+                                </p>
+                            </div>
+                            
+                            <div class="right-card">
+                                <span class="right-icon">📥</span>
+                                <h4 style="color: var(--purple-primary);">Right to Access</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Request a copy of all personal data we have about you.
+                                </p>
+                            </div>
+                            
+                            <div class="right-card">
+                                <span class="right-icon">✏️</span>
+                                <h4 style="color: var(--purple-primary);">Right to Correct</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Request correction of any inaccurate personal information.
+                                </p>
+                            </div>
+                            
+                            <div class="right-card">
+                                <span class="right-icon">🗑️</span>
+                                <h4 style="color: var(--purple-primary);">Right to Delete</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Request deletion of your personal data from our systems.
+                                </p>
+                            </div>
+                            
+                            <div class="right-card">
+                                <span class="right-icon">🚫</span>
+                                <h4 style="color: var(--purple-primary);">Right to Object</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Object to certain types of data processing.
+                                </p>
+                            </div>
+                            
+                            <div class="right-card">
+                                <span class="right-icon">📤</span>
+                                <h4 style="color: var(--purple-primary);">Right to Portability</h4>
+                                <p style="color: var(--secondary-text); font-size: 0.9rem;">
+                                    Request your data in a portable, machine-readable format.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h4>How to Exercise Your Rights</h4>
+                        <p>To exercise any of these rights, contact us at <strong>privacy@yesno.pro</strong>. We will respond within 30 days.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Data Security -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🔐 6. Data Security
+                    </h2>
+                    <div class="section-content">
+                        <h4>Technical Safeguards</h4>
+                        <ul>
+                            <li><strong>HTTPS Encryption:</strong> All data transmitted to our servers is encrypted</li>
+                            <li><strong>Secure Hosting:</strong> Our servers are protected by enterprise-grade security</li>
+                            <li><strong>Regular Updates:</strong> We maintain up-to-date security patches and protocols</li>
+                            <li><strong>Access Controls:</strong> Strict limits on who can access any stored data</li>
+                        </ul>
+                        
+                        <h4>Operational Safeguards</h4>
+                        <ul>
+                            <li><strong>Data Minimization:</strong> We collect only what's absolutely necessary</li>
+                            <li><strong>Immediate Processing:</strong> Divination questions are processed instantly and not stored</li>
+                            <li><strong>Regular Audits:</strong> We regularly review our data handling practices</li>
+                            <li><strong>Incident Response:</strong> We have procedures for handling any security incidents</li>
+                        </ul>
+                        
+                        <div class="privacy-highlight">
+                            <strong>Unique Protection:</strong> Since we don't store your questions or readings, there's no database of spiritual consultations that could ever be compromised.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Cookies and Tracking -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🍪 7. Cookies and Tracking
+                    </h2>
+                    <div class="section-content">
+                        <h4>Essential Cookies</h4>
+                        <p>We use minimal cookies necessary for basic website functionality:</p>
+                        <ul>
+                            <li><strong>Session Cookies:</strong> To maintain your preferences during your visit</li>
+                            <li><strong>Security Cookies:</strong> To prevent fraud and ensure website security</li>
+                        </ul>
+                        
+                        <h4>Analytics Cookies</h4>
+                        <p>We use Google Analytics with privacy-focused settings:</p>
+                        <ul>
+                            <li>IP addresses are anonymized</li>
+                            <li>Data sharing with Google is limited</li>
+                            <li>No cross-device or cross-site tracking</li>
+                            <li>You can opt-out using browser settings or Google's opt-out tools</li>
+                        </ul>
+                        
+                        <h4>Cookie Control</h4>
+                        <p>You can control cookies through your browser settings. Note that disabling essential cookies may affect website functionality.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Children's Privacy -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        👶 8. Children's Privacy
+                    </h2>
+                    <div class="section-content">
+                        <div class="privacy-highlight">
+                            <strong>Age Requirement:</strong> YesNo.Pro is intended for users 13 years and older. We do not knowingly collect personal information from children under 13.
+                        </div>
+                        
+                        <h4>Teen Users (13-17)</h4>
+                        <ul>
+                            <li>We recommend parental guidance for teen users</li>
+                            <li>The same privacy protections apply to all age-appropriate users</li>
+                            <li>Parents can contact us to discuss their teen's use of our service</li>
+                        </ul>
+                        
+                        <h4>If We Discover Child Data</h4>
+                        <p>If we become aware that we have collected information from a child under 13, we will immediately delete that information and take steps to prevent future collection.</p>
+                    </div>
+                </div>
+
+                <!-- 9. International Data Transfers -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🌍 9. International Data Transfers
+                    </h2>
+                    <div class="section-content">
+                        <p>
+                            YesNo.Pro may be accessed from around the world. Any personal information collected may be transferred to and processed in countries where our service providers operate.
+                        </p>
+                        
+                        <h4>Protection Standards</h4>
+                        <ul>
+                            <li>We ensure all international transfers meet or exceed applicable privacy standards</li>
+                            <li>Our service providers are contractually bound to protect your data</li>
+                            <li>We implement appropriate safeguards for cross-border data transfers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 10. Privacy Policy Updates -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        🔄 10. Privacy Policy Updates
+                    </h2>
+                    <div class="section-content">
+                        <h4>How We Handle Updates</h4>
+                        <p>We may update this Privacy Policy occasionally to reflect changes in our practices or legal requirements. When we do:</p>
+                        <ul>
+                            <li>We'll update the "Last Updated" date at the top</li>
+                            <li>For significant changes, we'll provide prominent notice on our website</li>
+                            <li>We may also notify newsletter subscribers of important privacy changes</li>
+                        </ul>
+                        
+                        <h4>Your Continued Use</h4>
+                        <p>Your continued use of YesNo.Pro after any updates constitutes acceptance of the revised Privacy Policy.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Contact & Questions -->
+                <div class="privacy-section fade-in">
+                    <h2 class="section-title">
+                        📞 11. Privacy Questions & Contact
+                    </h2>
+                    <div class="section-content">
+                        <h4>Privacy Officer Contact</h4>
+                        <ul>
+                            <li><strong>Email:</strong> privacy@yesno.pro</li>
+                            <li><strong>General Support:</strong> support@yesno.pro</li>
+                            <li><strong>Data Protection Requests:</strong> Please use "Privacy Request" as the subject line</li>
+                        </ul>
+                        
+                        <h4>Response Times</h4>
+                        <ul>
+                            <li><strong>Privacy Rights Requests:</strong> 30 days maximum</li>
+                            <li><strong>General Privacy Questions:</strong> 5 business days</li>
+                            <li><strong>Urgent Privacy Concerns:</strong> 24-48 hours</li>
+                        </ul>
+                        
+                        <h4>What to Include in Your Request</h4>
+                        <p>When contacting us about privacy matters, please include:</p>
+                        <ul>
+                            <li>Clear description of your request or concern</li>
+                            <li>Verification of your identity (for data requests)</li>
+                            <li>Preferred method of response</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Notice -->
+                <div class="contact-privacy fade-in">
+                    <h3 style="color: white; margin-bottom: 1rem;">🛡️ Privacy Questions?</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem;">
+                        We're committed to transparency about our privacy practices. 
+                        Don't hesitate to reach out with any questions or concerns about how we protect your information.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="./contact-us.html" class="btn btn-white">Contact Privacy Team</a>
+                        <a href="mailto:privacy@yesno.pro" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">Email Directly</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./about-us.html" class="footer-link">About Us</a>
+                    <a href="./contact-us.html" class="footer-link">Contact Us</a>
+                    <a href="./terms-of-service.html" class="footer-link">Terms of Service</a>
+                    <a href="./privacy-policy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <p class="footer-copy">© 2025 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.body.classList.add('loaded');
+        
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
+</body>
+</html> 

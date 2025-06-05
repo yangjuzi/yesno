@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - YesNo.Pro | Mystical Decision Making Platform</title>
+    <meta name="description" content="Learn about YesNo.Pro, your trusted platform for mystical decision making through oracle readings, tarot cards, astrology, and ancient wisdom traditions.">
+    <meta name="keywords" content="about yesno.pro, mystical decision making, oracle platform, divination tools, spiritual guidance">
+    <meta name="author" content="YesNo.Pro">
+    <meta property="og:title" content="About Us - YesNo.Pro">
+    <meta property="og:description" content="Learn about YesNo.Pro, your trusted platform for mystical decision making and ancient wisdom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yesno.pro/about-us.html">
+    <meta property="og:image" content="https://yesno.pro/images/about-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link rel="canonical" href="https://yesno.pro/about-us.html" />
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            opacity: 1 !important;
+        }
+        
+        .about-header {
+            background: linear-gradient(135deg, #1a1a2e, #2d1b69, #4c1d95);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #a78bfa, transparent),
+                radial-gradient(1px 1px at 40px 70px, #f59e0b, transparent),
+                radial-gradient(1px 1px at 90px 40px, #8b5cf6, transparent);
+            background-repeat: repeat;
+            background-size: 150px 100px;
+            animation: mysticalFloat 20s linear infinite;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        
+        @keyframes mysticalFloat {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg, var(--card-bg), var(--secondary-bg));
+            border: 2px solid var(--purple-primary);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-mystical);
+            border-color: var(--purple-primary);
+        }
+        
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid var(--gold-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .journey-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-item {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--purple-primary);
+            position: relative;
+        }
+        
+        .timeline-year {
+            background: var(--purple-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-medium);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="loaded">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./" class="nav-brand">YesNo.Pro</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./" class="nav-link">Oracle</a></li>
+                <li><a href="./yes-no-wheel.html" class="nav-link">Wheel</a></li>
+                <li><a href="./yes-no-tarot.html" class="nav-link">Tarot</a></li>
+                <li><a href="./yes-no-button.html" class="nav-link">Button</a></li>
+                <li><a href="./yes-no-astrology.html" class="nav-link">Astrology</a></li>
+                <li><a href="./blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="about-header">
+        <div class="container">
+            <h1 class="fade-in" style="position: relative; z-index: 1;">🔮 About YesNo.Pro</h1>
+            <p class="fade-in" style="font-size: 1.2rem; position: relative; z-index: 1; margin-top: 1rem;">
+                Bridging ancient wisdom with modern technology for better decision making
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Mission Statement -->
+            <div class="mission-card fade-in">
+                <div class="text-center" style="position: relative; z-index: 1;">
+                    <h2 style="color: var(--primary-text); margin-bottom: 2rem;">Our Sacred Mission</h2>
+                    <p style="font-size: 1.2rem; color: var(--secondary-text); line-height: 1.8; margin-bottom: 2rem;">
+                        At YesNo.Pro, we believe that everyone deserves access to wisdom and guidance when facing life's difficult decisions. 
+                        Our platform combines the timeless wisdom of ancient divination practices with modern technology to provide 
+                        instant, accessible, and meaningful guidance for anyone seeking clarity.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--accent-text); font-style: italic;">
+                        "We don't predict the future—we illuminate the path to your highest good."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Our Story -->
+            <div class="card fade-in">
+                <h2 style="text-align: center; color: var(--primary-text); margin-bottom: 2rem;">Our Journey</h2>
+                <div class="journey-timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">2023</div>
+                        <h3 style="color: var(--purple-primary);">The Vision</h3>
+                        <p style="color: var(--secondary-text);">
+                            Recognizing the need for accessible spiritual guidance in our fast-paced digital world, 
+                            our founders began developing a platform that would democratize ancient wisdom traditions.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">2024</div>
+                        <h3 style="color: var(--purple-primary);">Platform Development</h3>
+                        <p style="color: var(--secondary-text);">
+                            Through extensive research and collaboration with spiritual practitioners, we created our 
+                            comprehensive suite of divination tools including Oracle readings, Tarot cards, Astrology guidance, and more.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">2025</div>
+                        <h3 style="color: var(--purple-primary);">Global Community</h3>
+                        <p style="color: var(--secondary-text);">
+                            Today, we serve thousands of seekers worldwide, providing guidance and clarity through our 
+                            innovative blend of ancient wisdom and modern accessibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Values -->
+            <div class="card fade-in">
+                <h2 style="text-align: center; color: var(--primary-text); margin-bottom: 2rem;">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">🌟</span>
+                        <h3 style="color: var(--purple-primary);">Authenticity</h3>
+                        <p style="color: var(--secondary-text);">
+                            We honor traditional wisdom practices while adapting them thoughtfully for modern seekers.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <span class="value-icon">🤝</span>
+                        <h3 style="color: var(--purple-primary);">Accessibility</h3>
+                        <p style="color: var(--secondary-text);">
+                            Spiritual guidance should be available to everyone, regardless of background or experience level.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <span class="value-icon">🛡️</span>
+                        <h3 style="color: var(--purple-primary);">Integrity</h3>
+                        <p style="color: var(--secondary-text);">
+                            We provide guidance as a tool for reflection, always emphasizing personal empowerment and choice.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <span class="value-icon">💡</span>
+                        <h3 style="color: var(--purple-primary);">Innovation</h3>
+                        <p style="color: var(--secondary-text);">
+                            We continuously evolve our platform to better serve our community's needs and aspirations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Team -->
+            <div class="card fade-in">
+                <h2 style="text-align: center; color: var(--primary-text); margin-bottom: 2rem;">Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">🔮</div>
+                        <h3 style="color: var(--purple-primary);">Spiritual Advisory Board</h3>
+                        <p style="color: var(--secondary-text); margin-bottom: 1rem;">
+                            Our platform is guided by experienced practitioners in tarot, astrology, and various wisdom traditions.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">💻</div>
+                        <h3 style="color: var(--purple-primary);">Technology Team</h3>
+                        <p style="color: var(--secondary-text); margin-bottom: 1rem;">
+                            Dedicated developers and designers working to create the most intuitive and beautiful spiritual guidance platform.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">📝</div>
+                        <h3 style="color: var(--purple-primary);">Content Creators</h3>
+                        <p style="color: var(--secondary-text); margin-bottom: 1rem;">
+                            Writers and researchers who create our educational content and ensure accuracy in our guidance systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Makes Us Different -->
+            <div class="card fade-in" style="background: linear-gradient(135deg, var(--tertiary-bg), var(--secondary-bg));">
+                <h2 style="text-align: center; color: var(--primary-text); margin-bottom: 2rem;">What Makes Us Different</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                        <h3 style="color: var(--purple-primary);">Instant Guidance</h3>
+                        <p style="color: var(--secondary-text);">
+                            No waiting, no appointments. Get the wisdom you need exactly when you need it.
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                        <h3 style="color: var(--purple-primary);">Complete Privacy</h3>
+                        <p style="color: var(--secondary-text);">
+                            Your questions and guidance sessions remain completely private and confidential.
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌈</div>
+                        <h3 style="color: var(--purple-primary);">Multiple Traditions</h3>
+                        <p style="color: var(--secondary-text);">
+                            Choose from various wisdom traditions to find the approach that resonates with you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="card fade-in text-center" style="background: linear-gradient(135deg, var(--purple-primary), var(--purple-secondary)); color: white;">
+                <h2 style="color: white; margin-bottom: 1rem;">Join Our Journey</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 2rem;">
+                    Become part of a community that values wisdom, growth, and authentic guidance. 
+                    Start your journey with us today.
+                </p>
+                <a href="./" class="btn btn-white" style="margin-right: 1rem;">Try Oracle Reading</a>
+                <a href="./contact-us.html" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">Contact Us</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./about-us.html" class="footer-link">About Us</a>
+                    <a href="./contact-us.html" class="footer-link">Contact Us</a>
+                    <a href="./terms-of-service.html" class="footer-link">Terms of Service</a>
+                    <a href="./privacy-policy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <p class="footer-copy">© 2025 YesNo.Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.body.classList.add('loaded');
+        
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZY24GZMKZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NZY24GZMKZ');
+    </script>
+</body>
+</html> 

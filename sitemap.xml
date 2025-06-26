@@ -42,4 +42,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://yesno.pro/blog-digital-wisdom-fusion.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yesno.pro/blog-divination-tools-comparison.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yesno.pro/blog-intuitive-decision-making.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yesno.pro/blog-overcoming-decision-paralysis.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yesno.pro/blog-tarot-beginners-guide.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yesno.pro/blog-zodiac-decision-making.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

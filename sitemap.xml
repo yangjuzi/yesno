@@ -7,11 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yesno.pro/index.html</loc>
-    <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://yesno.pro/yes-no-oracle.html</loc>
     <lastmod>2024-01-20</lastmod>
     <changefreq>weekly</changefreq>
